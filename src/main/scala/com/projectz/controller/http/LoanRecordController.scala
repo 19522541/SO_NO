@@ -10,24 +10,24 @@ import javax.inject.Inject
 
 class LoanRecordController @Inject()(loanRecordService: LoanRecordService) extends Controller {
   get("/loan/:id") { request: GetLoanRecordRequest=> {
-   val userLoanRecord =loanRecordService.getRecord(request)
+   val userLoanRecord:Seq[LoanRecord]  =loanRecordService.getRecord(request)
     response.ok(userLoanRecord.toString())
   }
   }
   put("/loan:id") { request: PutLoanRecordRequest => {
-   val updatedRecordItem= loanRecordService.updateRecord(request)
+    val updatedRecordItem: LoanRecord = loanRecordService.updateRecord(request)
     response.ok(updatedRecordItem)
   }
   }
   post("/loan/:id") {
     request: PostLoanRecordRequest => {
-    val addedItemRecord=  loanRecordService.addRecord(request.id,request.loanRecord)
-      response.ok( addedItemRecord.get.toString)
+    val addedItemRecordItem :Option[LoanRecord]=  loanRecordService.addRecord(request.id,request.loanRecord)
+      response.ok( addedItemRecordItem.get.toString)
     }
   }
   delete("/loan/:id") {
     request: Request => {
-   val deletedRecordItem=   loanRecordService.deleteRecord(request.getParam("id"))
+   val deletedRecordItem: LoanRecord=   loanRecordService.deleteRecord(request.getParam("id"))
       response.ok(deletedRecordItem.toString)
     }
   }

@@ -14,7 +14,7 @@ trait LoanRecordService {
 
   def addRecord(id: String, loanRecord: LoanRecord): Option[LoanRecord]
 
-  def deleteRecord(id: String): Seq[LoanRecord]
+  def deleteRecord(id: String): LoanRecord
 
   def updateRecord(putLoanRecordRequest: PutLoanRecordRequest): LoanRecord
 }
@@ -23,7 +23,7 @@ class LoanRecordServiceImpl @Inject()(
                                        LoanRecordRepository: LoanRecordRepository[String, LoanRecord,RecordModifier]
                                      ) extends LoanRecordService {
 
-  override def deleteRecord(id: String): Seq[LoanRecord] = {
+  override def deleteRecord(id: String): LoanRecord = {
     LoanRecordRepository.delete(id)
   }
 
