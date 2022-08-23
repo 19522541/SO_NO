@@ -1,17 +1,37 @@
 package com.projectz.repository
 
-import com.projectz.domain.{LoanRecord, User}
-trait  LoanRecordRepository[X,Y]{
-    def add(x:X,y:Y):Unit
-    def show(x:X):Set[Y]
+import com.projectz.domain.{LoanRecord, RecordModifier}
+
+import java.lang.String
+
+trait  LoanRecordRepository[X,Y,Z]{
+    def add(y:Y):Option[Y]
+    def show(x:X):Seq[Y]
+    def delete(x:X):Seq[Y]
+    def update(x:X,y: Y):Y
 }
-class LoadRecordStore extends LoanRecordRepository[User,LoanRecord] {
-    var record: Set[LoanRecord] =  Set[LoanRecord]()
+class LoadRecordStore extends LoanRecordRepository[String,LoanRecord,RecordModifier] {
+    var record: Seq[LoanRecord] =  Seq[LoanRecord]()
 
 
-  override def add(x: User, y: LoanRecord):Unit = {
-      record+(y)
-        }
+  override def show(x: String): Seq[LoanRecord] = record.filter(_.lender.id==x)
 
-  override def show(x: User): Set[LoanRecord] = record.filter(_.lender.id==x.id)
+  override def add(y: LoanRecord): Option[LoanRecord] = {
+      try {
+        record:+y
+        Some(y)
+      }catch {
+        case e:Exception=> None
+      }
+  }
+
+
+  override def delete(x: String): Seq[LoanRecord] = {
+    record.dropWhile(_.id==x)
+  }
+
+  override def update(x: String, z: RecordModifier): LoanRecord = {
+   var tempItem= record.find(_.id==x).get
+
+  }
 }

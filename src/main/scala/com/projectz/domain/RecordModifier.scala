@@ -1,3 +1,3 @@
 package com.projectz.domain
 
-case class RecordModifier (loanAmount:Long,deadline:String,id:String)
+case class RecordModifier (loanAmount:Long=0, deadline:String="", isPaired:Boolean)

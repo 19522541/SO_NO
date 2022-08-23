@@ -21,8 +21,8 @@ class LoanRecordController @Inject()(loanRecordService: LoanRecordService) exten
   }
   post("/loan/:id") {
     request: PostLoanRecordRequest => {
-    val addedItemRecord=  loanRecordService.addRecord(request)
-      response.ok( addedItemRecord.toString)
+    val addedItemRecord=  loanRecordService.addRecord(request.id,request.loanRecord)
+      response.ok( addedItemRecord.get.toString)
     }
   }
   delete("/loan/:id") {

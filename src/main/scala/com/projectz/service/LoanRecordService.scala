@@ -9,22 +9,36 @@ import java.util.Date
 import javax.inject.Inject
 import scala.concurrent.duration.Deadline
 
-trait LoanRecordService{
-  def getRecord(getLoanRecordRequest: GetLoanRecordRequest):Set[LoanRecord]
-  def addRecord(postLoanRecordRequest: PostLoanRecordRequest) :LoanRecord
-  def deleteRecord(id:String):LoanRecord
-  def updateRecord(putLoanRecordRequest: PutLoanRecordRequest):LoanRecord
+trait LoanRecordService {
+  def getRecord(getLoanRecordRequest: GetLoanRecordRequest): Seq[LoanRecord]
+
+  def addRecord(id: String, loanRecord: LoanRecord): Option[LoanRecord]
+
+  def deleteRecord(id: String): Seq[LoanRecord]
+
+  def updateRecord(putLoanRecordRequest: PutLoanRecordRequest): LoanRecord
 }
- class LoanRecordServiceImpl @Inject()(
-                LoanRecordRepository:LoanRecordRepository[User,LoanRecord]
+
+class LoanRecordServiceImpl @Inject()(
+                                       LoanRecordRepository: LoanRecordRepository[String, LoanRecord,RecordModifier]
                                      ) extends LoanRecordService {
 
-  override def deleteRecord(id: String): LoanRecord = ???
+  override def deleteRecord(id: String): Seq[LoanRecord] = {
+    LoanRecordRepository.delete(id)
+  }
 
-   override def addRecord(postLoanRecordRequest: PostLoanRecordRequest): LoanRecord = ???
+  override def updateRecord(putLoanRecordRequest: PutLoanRecordRequest): LoanRecord = ???
 
-   override def updateRecord(putLoanRecordRequest: PutLoanRecordRequest): LoanRecord = ???
+  override def getRecord(getLoanRecordRequest: GetLoanRecordRequest): Seq[LoanRecord] = {
+    LoanRecordRepository.show(getLoanRecordRequest.id)
 
-   override def getRecord(getLoanRecordRequest: GetLoanRecordRequest):Set[LoanRecord] = ???
- }
+  }
+
+  override def addRecord(id: String, loanRecord: LoanRecord): Option[LoanRecord] = {
+    if (id == loanRecord.lender.id) {
+      LoanRecordRepository.add(loanRecord)
+    }
+    None
+  }
+}
 
