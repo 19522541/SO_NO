@@ -11,9 +11,10 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import javax.inject.Inject
 
-class LoanRecordController @Inject()(loanRecordService: LoanService) extends Controller {
+class LoanRecordController @Inject()() extends Controller {
   val formatter = new SimpleDateFormat("dd-MMM-yyyy")
   get("/loan/detail") { request: GetBorrowerRequest => {
+
     Seq(
       LoanResponse(
         loanAmount = 150000,
@@ -27,6 +28,8 @@ class LoanRecordController @Inject()(loanRecordService: LoanService) extends Con
   }
 
   get("/loan") { request: GetLoanRecordRequest => {
+    println(request.lenderId)
+    println(request.keyword)
     //val userLoanRecord:Seq[LoanRecord]  =loanRecordService.getRecord(request)
     Seq( LoanResponse(
       loanAmount = 150000,
@@ -49,6 +52,7 @@ class LoanRecordController @Inject()(loanRecordService: LoanService) extends Con
 
   post("/loan/:lender_id") {
     request: AddLoanRecordRequest => {
+      println(s"Add request ${request.lenderId}=====")
       //val addedItemRecordItem :LoanRecord=  loanRecordService.addRecord(request.loanRecord)
       LoanRecord(
         id="001",

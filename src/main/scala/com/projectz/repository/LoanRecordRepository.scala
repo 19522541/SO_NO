@@ -15,7 +15,7 @@ class LoadRecordStore extends LoanRecordRepository[String,LoanRecord] {
     var record: Seq[LoanRecord] =  Seq[LoanRecord]()
 
 
-  override def show(x: String): Seq[LoanRecord] = record.filter(_.lender==x)
+  override def show(x: String): Seq[LoanRecord] = ???
 
   override def add(y: LoanRecord): Option[LoanRecord] = {
       try {
