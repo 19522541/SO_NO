@@ -7820,3 +7820,590 @@ CacheController.getUser
 2022-08-23 08:09:12,893 INF                  Awaiter$                  Awaiting 2 awaitables: 
 com.twitter.finagle.server.ListeningStackServer$$anon$1
 com.twitter.finagle.server.ListeningStackServer$$anon$1
+2022-08-24 07:11:11,189 INF                  Slf4jBridgeUtility$       org.slf4j.bridge.SLF4JBridgeHandler installed.
+2022-08-24 07:11:11,673 INF                  HttpMuxer$                HttpMuxer[/admin/metrics.json] = com.twitter.finagle.stats.MetricsExporter(com.twitter.finagle.stats.MetricsExporter)
+2022-08-24 07:11:11,673 INF                  HttpMuxer$                HttpMuxer[/admin/per_host_metrics.json] = com.twitter.finagle.stats.HostMetricsExporter(com.twitter.finagle.stats.HostMetricsExporter)
+2022-08-24 07:11:11,815 INF                  TestServer                Process started
+2022-08-24 07:11:11,916 INF                  TestServer                admin http is disabled and will not be started.
+2022-08-24 07:11:12,256 INF                  TestServer                Resolving Finagle clients before warmup
+2022-08-24 07:11:12,260 INF                  TestServer                Done resolving clients: [].
+2022-08-24 07:11:12,306 WAR                  FinagleBuildRevision$     Unable to resolve Finagle revision.
+2022-08-24 07:11:13,007 INF                  HttpRouter                Adding routes
+POST    /addUser
+GET     /getUser
+GET     /ping
+GET     /getProduct
+POST    /createProduct
+GET     /loan/detail
+GET     /loan
+POST    /loan/:lender_id
+2022-08-24 07:11:13,057 INF                  ThriftRouter              Adding methods
+CacheController.ping
+CacheController.addUser
+CacheController.getUser
+2022-08-24 07:11:13,059 INF                  TestServer                Warming up.
+2022-08-24 07:11:13,316 INF                  finagle                   Finagle version 20.5.0 (rev=413f28a1b26b9700bee91685235a6ca2a53fbe9b) built at 20200526-214546
+2022-08-24 07:11:13,398 INF                  TestServer                http server started on port: /127.0.0.1:0
+2022-08-24 07:11:13,497 INF                  TestServer                thrift server started on port: 39669
+2022-08-24 07:11:13,498 INF                  TestServer                admin http server is disabled
+2022-08-24 07:11:13,500 INF                  TestServer                com.projectz.TestServer started.
+2022-08-24 07:11:13,500 INF                  TestServer                Startup complete, server awaiting.
+2022-08-24 07:11:13,501 INF                  Awaiter$                  Awaiting 2 awaitables: 
+com.twitter.finagle.server.ListeningStackServer$$anon$1
+com.twitter.finagle.server.ListeningStackServer$$anon$1
+2022-08-24 07:12:35,206 INF                  Slf4jBridgeUtility$       org.slf4j.bridge.SLF4JBridgeHandler installed.
+2022-08-24 07:12:35,687 INF                  HttpMuxer$                HttpMuxer[/admin/metrics.json] = com.twitter.finagle.stats.MetricsExporter(com.twitter.finagle.stats.MetricsExporter)
+2022-08-24 07:12:35,688 INF                  HttpMuxer$                HttpMuxer[/admin/per_host_metrics.json] = com.twitter.finagle.stats.HostMetricsExporter(com.twitter.finagle.stats.HostMetricsExporter)
+2022-08-24 07:12:35,809 INF                  TestServer                Process started
+2022-08-24 07:12:35,897 INF                  TestServer                admin http is disabled and will not be started.
+2022-08-24 07:12:36,237 INF                  TestServer                Resolving Finagle clients before warmup
+2022-08-24 07:12:36,241 INF                  TestServer                Done resolving clients: [].
+2022-08-24 07:12:36,285 WAR                  FinagleBuildRevision$     Unable to resolve Finagle revision.
+2022-08-24 07:12:36,983 INF                  HttpRouter                Adding routes
+POST    /addUser
+GET     /getUser
+GET     /ping
+GET     /getProduct
+POST    /createProduct
+GET     /loan/detail
+GET     /loan
+POST    /loan/:lender_id
+2022-08-24 07:12:37,020 INF                  ThriftRouter              Adding methods
+CacheController.ping
+CacheController.addUser
+CacheController.getUser
+2022-08-24 07:12:37,022 INF                  TestServer                Warming up.
+2022-08-24 07:12:37,247 INF                  finagle                   Finagle version 20.5.0 (rev=413f28a1b26b9700bee91685235a6ca2a53fbe9b) built at 20200526-214546
+2022-08-24 07:12:37,327 INF                  TestServer                http server started on port: /127.0.0.1:0
+2022-08-24 07:12:37,424 INF                  TestServer                thrift server started on port: 41381
+2022-08-24 07:12:37,424 INF                  TestServer                admin http server is disabled
+2022-08-24 07:12:37,425 INF                  TestServer                com.projectz.TestServer started.
+2022-08-24 07:12:37,426 INF                  TestServer                Startup complete, server awaiting.
+2022-08-24 07:12:37,427 INF                  Awaiter$                  Awaiting 2 awaitables: 
+com.twitter.finagle.server.ListeningStackServer$$anon$1
+com.twitter.finagle.server.ListeningStackServer$$anon$1
+2022-08-24 07:15:53,321 INF                  Slf4jBridgeUtility$       org.slf4j.bridge.SLF4JBridgeHandler installed.
+2022-08-24 07:15:53,818 INF                  HttpMuxer$                HttpMuxer[/admin/metrics.json] = com.twitter.finagle.stats.MetricsExporter(com.twitter.finagle.stats.MetricsExporter)
+2022-08-24 07:15:53,818 INF                  HttpMuxer$                HttpMuxer[/admin/per_host_metrics.json] = com.twitter.finagle.stats.HostMetricsExporter(com.twitter.finagle.stats.HostMetricsExporter)
+2022-08-24 07:15:53,944 INF                  TestServer                Process started
+2022-08-24 07:15:54,035 INF                  TestServer                admin http is disabled and will not be started.
+2022-08-24 07:15:54,397 INF                  TestServer                Resolving Finagle clients before warmup
+2022-08-24 07:15:54,402 INF                  TestServer                Done resolving clients: [].
+2022-08-24 07:15:54,450 WAR                  FinagleBuildRevision$     Unable to resolve Finagle revision.
+2022-08-24 07:15:55,133 INF                  HttpRouter                Adding routes
+POST    /addUser
+GET     /getUser
+GET     /ping
+GET     /getProduct
+POST    /createProduct
+GET     /loan/detail
+GET     /loan
+POST    /loan/:lender_id
+2022-08-24 07:15:55,171 INF                  ThriftRouter              Adding methods
+CacheController.ping
+CacheController.addUser
+CacheController.getUser
+2022-08-24 07:15:55,173 INF                  TestServer                Warming up.
+2022-08-24 07:15:55,397 INF                  finagle                   Finagle version 20.5.0 (rev=413f28a1b26b9700bee91685235a6ca2a53fbe9b) built at 20200526-214546
+2022-08-24 07:15:55,478 INF                  TestServer                http server started on port: /127.0.0.1:0
+2022-08-24 07:15:55,571 INF                  TestServer                thrift server started on port: 34987
+2022-08-24 07:15:55,571 INF                  TestServer                admin http server is disabled
+2022-08-24 07:15:55,573 INF                  TestServer                com.projectz.TestServer started.
+2022-08-24 07:15:55,573 INF                  TestServer                Startup complete, server awaiting.
+2022-08-24 07:15:55,574 INF                  Awaiter$                  Awaiting 2 awaitables: 
+com.twitter.finagle.server.ListeningStackServer$$anon$1
+com.twitter.finagle.server.ListeningStackServer$$anon$1
+2022-08-24 07:20:01,870 INF                  Slf4jBridgeUtility$       org.slf4j.bridge.SLF4JBridgeHandler installed.
+2022-08-24 07:20:02,358 INF                  HttpMuxer$                HttpMuxer[/admin/metrics.json] = com.twitter.finagle.stats.MetricsExporter(com.twitter.finagle.stats.MetricsExporter)
+2022-08-24 07:20:02,358 INF                  HttpMuxer$                HttpMuxer[/admin/per_host_metrics.json] = com.twitter.finagle.stats.HostMetricsExporter(com.twitter.finagle.stats.HostMetricsExporter)
+2022-08-24 07:20:02,475 INF                  TestServer                Process started
+2022-08-24 07:20:02,570 INF                  TestServer                admin http is disabled and will not be started.
+2022-08-24 07:20:02,905 INF                  TestServer                Resolving Finagle clients before warmup
+2022-08-24 07:20:02,909 INF                  TestServer                Done resolving clients: [].
+2022-08-24 07:20:02,959 WAR                  FinagleBuildRevision$     Unable to resolve Finagle revision.
+2022-08-24 07:20:03,645 INF                  HttpRouter                Adding routes
+POST    /addUser
+GET     /getUser
+GET     /ping
+GET     /getProduct
+POST    /createProduct
+GET     /loan/detail
+GET     /loan
+POST    /loan/:lender_id
+2022-08-24 07:20:03,680 INF                  ThriftRouter              Adding methods
+CacheController.ping
+CacheController.addUser
+CacheController.getUser
+2022-08-24 07:20:03,682 INF                  TestServer                Warming up.
+2022-08-24 07:20:03,907 INF                  finagle                   Finagle version 20.5.0 (rev=413f28a1b26b9700bee91685235a6ca2a53fbe9b) built at 20200526-214546
+2022-08-24 07:20:03,982 INF                  TestServer                http server started on port: /127.0.0.1:0
+2022-08-24 07:20:04,074 INF                  TestServer                thrift server started on port: 39827
+2022-08-24 07:20:04,074 INF                  TestServer                admin http server is disabled
+2022-08-24 07:20:04,076 INF                  TestServer                com.projectz.TestServer started.
+2022-08-24 07:20:04,076 INF                  TestServer                Startup complete, server awaiting.
+2022-08-24 07:20:04,077 INF                  Awaiter$                  Awaiting 2 awaitables: 
+com.twitter.finagle.server.ListeningStackServer$$anon$1
+com.twitter.finagle.server.ListeningStackServer$$anon$1
+2022-08-24 07:22:26,381 INF                  Slf4jBridgeUtility$       org.slf4j.bridge.SLF4JBridgeHandler installed.
+2022-08-24 07:22:26,869 INF                  HttpMuxer$                HttpMuxer[/admin/metrics.json] = com.twitter.finagle.stats.MetricsExporter(com.twitter.finagle.stats.MetricsExporter)
+2022-08-24 07:22:26,870 INF                  HttpMuxer$                HttpMuxer[/admin/per_host_metrics.json] = com.twitter.finagle.stats.HostMetricsExporter(com.twitter.finagle.stats.HostMetricsExporter)
+2022-08-24 07:22:26,995 INF                  TestServer                Process started
+2022-08-24 07:22:27,094 INF                  TestServer                admin http is disabled and will not be started.
+2022-08-24 07:22:27,418 INF                  TestServer                Resolving Finagle clients before warmup
+2022-08-24 07:22:27,421 INF                  TestServer                Done resolving clients: [].
+2022-08-24 07:22:27,466 WAR                  FinagleBuildRevision$     Unable to resolve Finagle revision.
+2022-08-24 07:22:28,188 INF                  HttpRouter                Adding routes
+POST    /addUser
+GET     /getUser
+GET     /ping
+GET     /getProduct
+POST    /createProduct
+GET     /loan/detail
+GET     /loan
+POST    /loan/:lender_id
+2022-08-24 07:22:28,225 INF                  ThriftRouter              Adding methods
+CacheController.ping
+CacheController.addUser
+CacheController.getUser
+2022-08-24 07:22:28,226 INF                  TestServer                Warming up.
+2022-08-24 07:22:28,455 INF                  finagle                   Finagle version 20.5.0 (rev=413f28a1b26b9700bee91685235a6ca2a53fbe9b) built at 20200526-214546
+2022-08-24 07:22:28,531 INF                  TestServer                http server started on port: /127.0.0.1:0
+2022-08-24 07:22:28,623 INF                  TestServer                thrift server started on port: 36245
+2022-08-24 07:22:28,623 INF                  TestServer                admin http server is disabled
+2022-08-24 07:22:28,625 INF                  TestServer                com.projectz.TestServer started.
+2022-08-24 07:22:28,625 INF                  TestServer                Startup complete, server awaiting.
+2022-08-24 07:22:28,626 INF                  Awaiter$                  Awaiting 2 awaitables: 
+com.twitter.finagle.server.ListeningStackServer$$anon$1
+com.twitter.finagle.server.ListeningStackServer$$anon$1
+2022-08-24 07:26:43,394 INF                  Slf4jBridgeUtility$       org.slf4j.bridge.SLF4JBridgeHandler installed.
+2022-08-24 07:26:43,911 INF                  HttpMuxer$                HttpMuxer[/admin/metrics.json] = com.twitter.finagle.stats.MetricsExporter(com.twitter.finagle.stats.MetricsExporter)
+2022-08-24 07:26:43,911 INF                  HttpMuxer$                HttpMuxer[/admin/per_host_metrics.json] = com.twitter.finagle.stats.HostMetricsExporter(com.twitter.finagle.stats.HostMetricsExporter)
+2022-08-24 07:26:44,046 INF                  TestServer                Process started
+2022-08-24 07:26:44,141 INF                  TestServer                admin http is disabled and will not be started.
+2022-08-24 07:26:44,507 INF                  TestServer                Resolving Finagle clients before warmup
+2022-08-24 07:26:44,511 INF                  TestServer                Done resolving clients: [].
+2022-08-24 07:26:44,560 WAR                  FinagleBuildRevision$     Unable to resolve Finagle revision.
+2022-08-24 07:26:45,254 INF                  HttpRouter                Adding routes
+POST    /addUser
+GET     /getUser
+GET     /ping
+GET     /getProduct
+POST    /createProduct
+GET     /loan/detail
+GET     /loan
+POST    /loan/:lender_id
+2022-08-24 07:26:45,289 INF                  ThriftRouter              Adding methods
+CacheController.ping
+CacheController.addUser
+CacheController.getUser
+2022-08-24 07:26:45,290 INF                  TestServer                Warming up.
+2022-08-24 07:26:45,537 INF                  finagle                   Finagle version 20.5.0 (rev=413f28a1b26b9700bee91685235a6ca2a53fbe9b) built at 20200526-214546
+2022-08-24 07:26:45,617 INF                  TestServer                http server started on port: /127.0.0.1:0
+2022-08-24 07:26:45,715 INF                  TestServer                thrift server started on port: 44505
+2022-08-24 07:26:45,715 INF                  TestServer                admin http server is disabled
+2022-08-24 07:26:45,717 INF                  TestServer                com.projectz.TestServer started.
+2022-08-24 07:26:45,717 INF                  TestServer                Startup complete, server awaiting.
+2022-08-24 07:26:45,719 INF                  Awaiter$                  Awaiting 2 awaitables: 
+com.twitter.finagle.server.ListeningStackServer$$anon$1
+com.twitter.finagle.server.ListeningStackServer$$anon$1
+2022-08-24 07:27:04,520 INF                  Slf4jBridgeUtility$       org.slf4j.bridge.SLF4JBridgeHandler installed.
+2022-08-24 07:27:04,981 INF                  HttpMuxer$                HttpMuxer[/admin/metrics.json] = com.twitter.finagle.stats.MetricsExporter(com.twitter.finagle.stats.MetricsExporter)
+2022-08-24 07:27:04,982 INF                  HttpMuxer$                HttpMuxer[/admin/per_host_metrics.json] = com.twitter.finagle.stats.HostMetricsExporter(com.twitter.finagle.stats.HostMetricsExporter)
+2022-08-24 07:27:05,105 INF                  TestServer                Process started
+2022-08-24 07:27:05,201 INF                  TestServer                admin http is disabled and will not be started.
+2022-08-24 07:27:05,556 INF                  TestServer                Resolving Finagle clients before warmup
+2022-08-24 07:27:05,560 INF                  TestServer                Done resolving clients: [].
+2022-08-24 07:27:05,612 WAR                  FinagleBuildRevision$     Unable to resolve Finagle revision.
+2022-08-24 07:27:06,325 INF                  HttpRouter                Adding routes
+POST    /addUser
+GET     /getUser
+GET     /ping
+GET     /getProduct
+POST    /createProduct
+GET     /loan/detail
+GET     /loan
+POST    /loan/:lender_id
+2022-08-24 07:27:06,364 INF                  ThriftRouter              Adding methods
+CacheController.ping
+CacheController.addUser
+CacheController.getUser
+2022-08-24 07:27:06,366 INF                  TestServer                Warming up.
+2022-08-24 07:27:06,589 INF                  finagle                   Finagle version 20.5.0 (rev=413f28a1b26b9700bee91685235a6ca2a53fbe9b) built at 20200526-214546
+2022-08-24 07:27:06,668 INF                  TestServer                http server started on port: /127.0.0.1:0
+2022-08-24 07:27:06,764 INF                  TestServer                thrift server started on port: 42385
+2022-08-24 07:27:06,764 INF                  TestServer                admin http server is disabled
+2022-08-24 07:27:06,765 INF                  TestServer                com.projectz.TestServer started.
+2022-08-24 07:27:06,766 INF                  TestServer                Startup complete, server awaiting.
+2022-08-24 07:27:06,767 INF                  Awaiter$                  Awaiting 2 awaitables: 
+com.twitter.finagle.server.ListeningStackServer$$anon$1
+com.twitter.finagle.server.ListeningStackServer$$anon$1
+2022-08-24 07:33:02,855 INF                  Slf4jBridgeUtility$       org.slf4j.bridge.SLF4JBridgeHandler installed.
+2022-08-24 07:33:03,355 INF                  HttpMuxer$                HttpMuxer[/admin/metrics.json] = com.twitter.finagle.stats.MetricsExporter(com.twitter.finagle.stats.MetricsExporter)
+2022-08-24 07:33:03,355 INF                  HttpMuxer$                HttpMuxer[/admin/per_host_metrics.json] = com.twitter.finagle.stats.HostMetricsExporter(com.twitter.finagle.stats.HostMetricsExporter)
+2022-08-24 07:33:03,474 INF                  TestServer                Process started
+2022-08-24 07:33:03,565 INF                  TestServer                admin http is disabled and will not be started.
+2022-08-24 07:33:03,941 INF                  TestServer                Resolving Finagle clients before warmup
+2022-08-24 07:33:03,946 INF                  TestServer                Done resolving clients: [].
+2022-08-24 07:33:04,003 WAR                  FinagleBuildRevision$     Unable to resolve Finagle revision.
+2022-08-24 07:33:04,687 INF                  HttpRouter                Adding routes
+POST    /addUser
+GET     /getUser
+GET     /ping
+GET     /getProduct
+POST    /createProduct
+GET     /loan/detail
+GET     /loan
+POST    /loan/:lender_id
+2022-08-24 07:33:04,729 INF                  ThriftRouter              Adding methods
+CacheController.ping
+CacheController.addUser
+CacheController.getUser
+2022-08-24 07:33:04,731 INF                  TestServer                Warming up.
+2022-08-24 07:33:04,950 INF                  finagle                   Finagle version 20.5.0 (rev=413f28a1b26b9700bee91685235a6ca2a53fbe9b) built at 20200526-214546
+2022-08-24 07:33:05,033 INF                  TestServer                http server started on port: /127.0.0.1:0
+2022-08-24 07:33:05,131 INF                  TestServer                thrift server started on port: 34667
+2022-08-24 07:33:05,131 INF                  TestServer                admin http server is disabled
+2022-08-24 07:33:05,133 INF                  TestServer                com.projectz.TestServer started.
+2022-08-24 07:33:05,133 INF                  TestServer                Startup complete, server awaiting.
+2022-08-24 07:33:05,134 INF                  Awaiter$                  Awaiting 2 awaitables: 
+com.twitter.finagle.server.ListeningStackServer$$anon$1
+com.twitter.finagle.server.ListeningStackServer$$anon$1
+2022-08-24 07:35:50,766 INF                  Slf4jBridgeUtility$       org.slf4j.bridge.SLF4JBridgeHandler installed.
+2022-08-24 07:35:51,279 INF                  HttpMuxer$                HttpMuxer[/admin/metrics.json] = com.twitter.finagle.stats.MetricsExporter(com.twitter.finagle.stats.MetricsExporter)
+2022-08-24 07:35:51,280 INF                  HttpMuxer$                HttpMuxer[/admin/per_host_metrics.json] = com.twitter.finagle.stats.HostMetricsExporter(com.twitter.finagle.stats.HostMetricsExporter)
+2022-08-24 07:35:51,417 INF                  TestServer                Process started
+2022-08-24 07:35:51,520 INF                  TestServer                admin http is disabled and will not be started.
+2022-08-24 07:35:51,847 INF                  TestServer                Resolving Finagle clients before warmup
+2022-08-24 07:35:51,851 INF                  TestServer                Done resolving clients: [].
+2022-08-24 07:35:51,893 WAR                  FinagleBuildRevision$     Unable to resolve Finagle revision.
+2022-08-24 07:35:52,553 INF                  HttpRouter                Adding routes
+POST    /addUser
+GET     /getUser
+GET     /ping
+GET     /getProduct
+POST    /createProduct
+GET     /loan/detail
+GET     /loan
+POST    /loan/:lender_id
+2022-08-24 07:35:52,587 INF                  ThriftRouter              Adding methods
+CacheController.ping
+CacheController.addUser
+CacheController.getUser
+2022-08-24 07:35:52,588 INF                  TestServer                Warming up.
+2022-08-24 07:35:52,827 INF                  finagle                   Finagle version 20.5.0 (rev=413f28a1b26b9700bee91685235a6ca2a53fbe9b) built at 20200526-214546
+2022-08-24 07:35:52,904 INF                  TestServer                http server started on port: /127.0.0.1:0
+2022-08-24 07:35:52,998 INF                  TestServer                thrift server started on port: 46273
+2022-08-24 07:35:52,999 INF                  TestServer                admin http server is disabled
+2022-08-24 07:35:53,001 INF                  TestServer                com.projectz.TestServer started.
+2022-08-24 07:35:53,001 INF                  TestServer                Startup complete, server awaiting.
+2022-08-24 07:35:53,003 INF                  Awaiter$                  Awaiting 2 awaitables: 
+com.twitter.finagle.server.ListeningStackServer$$anon$1
+com.twitter.finagle.server.ListeningStackServer$$anon$1
+2022-08-24 07:35:53,699 ERR                  JsonParseExceptionMapping JsonParseExceptionMapping: Cannot deserialize instance of `com.projectz.domain.request.AddLoanRecordRequest` out of VALUE_STRING token
+ at [Source: (com.twitter.io.BufInputStream); line: 2, column: 2]
+com.fasterxml.jackson.core.JsonParseException: Cannot deserialize instance of `com.projectz.domain.request.AddLoanRecordRequest` out of VALUE_STRING token
+ at [Source: (com.twitter.io.BufInputStream); line: 2, column: 2]
+	at com.twitter.finatra.jackson.caseclass.CaseClassDeserializer.incrementParserToFirstField(CaseClassDeserializer.scala:383)
+	at com.twitter.finatra.jackson.caseclass.CaseClassDeserializer.deserializeNonWrapperClass(CaseClassDeserializer.scala:287)
+	at com.twitter.finatra.jackson.caseclass.CaseClassDeserializer.deserialize(CaseClassDeserializer.scala:254)
+	at com.fasterxml.jackson.databind.ObjectReader._bindAndClose(ObjectReader.java:2057)
+	at com.fasterxml.jackson.databind.ObjectReader.readValue(ObjectReader.java:1431)
+	at com.twitter.finatra.http.marshalling.MessageBodyReader$.parseMessageBody(MessageBodyReader.scala:25)
+	at com.twitter.finatra.http.internal.marshalling.DefaultMessageBodyReaderImpl.parse(DefaultMessageBodyReaderImpl.scala:34)
+	at com.twitter.finatra.http.marshalling.MessageBodyManager.read(MessageBodyManager.scala:133)
+	at com.twitter.finatra.http.internal.routing.CallbackConverter.$anonfun$createRequestCallback$4(CallbackConverter.scala:97)
+	at com.twitter.finatra.http.internal.routing.CallbackConverter.$anonfun$createResponseCallback$12(CallbackConverter.scala:161)
+	at com.twitter.finagle.Service$$anon$2.apply(Service.scala:29)
+	at com.twitter.finagle.Service$$anon$1.apply(Service.scala:16)
+	at com.twitter.finagle.Service$$anon$1.apply(Service.scala:16)
+	at com.twitter.finatra.http.filters.HttpNackFilter.apply(HttpNackFilter.scala:33)
+	at com.twitter.finatra.http.filters.HttpNackFilter.apply(HttpNackFilter.scala:29)
+	at com.twitter.finagle.Filter$$anon$1.apply(Filter.scala:93)
+	at com.twitter.finatra.http.filters.ExceptionMappingFilter.apply(ExceptionMappingFilter.scala:18)
+	at com.twitter.finatra.http.filters.ExceptionMappingFilter.apply(ExceptionMappingFilter.scala:14)
+	at com.twitter.finagle.Filter$$anon$1.apply(Filter.scala:93)
+	at com.twitter.finatra.http.filters.HttpResponseFilter.apply(HttpResponseFilter.scala:58)
+	at com.twitter.finatra.http.filters.HttpResponseFilter.apply(HttpResponseFilter.scala:37)
+	at com.twitter.finagle.Filter$$anon$1.apply(Filter.scala:93)
+	at com.twitter.finatra.http.filters.AccessLoggingFilter.apply(AccessLoggingFilter.scala:44)
+	at com.twitter.finatra.http.filters.AccessLoggingFilter.apply(AccessLoggingFilter.scala:34)
+	at com.twitter.finagle.Filter$$anon$1.apply(Filter.scala:93)
+	at com.twitter.finatra.http.filters.StatsFilter.apply(StatsFilter.scala:204)
+	at com.twitter.finatra.http.filters.StatsFilter.apply(StatsFilter.scala:139)
+	at com.twitter.finagle.Filter$$anon$1.apply(Filter.scala:93)
+	at com.twitter.finagle.Filter$AndThen.apply(Filter.scala:200)
+	at com.twitter.finatra.filters.MergedFilter.apply(MergedFilter.scala:12)
+	at com.twitter.finagle.Filter$$anon$1.apply(Filter.scala:93)
+	at com.twitter.finagle.Filter$$anon$1.apply(Filter.scala:90)
+	at com.twitter.finatra.http.internal.routing.Route.handleMatch(Route.scala:76)
+	at com.twitter.finatra.http.internal.routing.Route.handle(Route.scala:68)
+	at com.twitter.finatra.http.internal.routing.Routes.handle(Routes.scala:43)
+	at com.twitter.finatra.http.internal.routing.RoutingService.route(RoutingService.scala:45)
+	at com.twitter.finatra.http.internal.routing.RoutingService.apply(RoutingService.scala:34)
+	at com.twitter.finatra.http.internal.routing.RoutingService.apply(RoutingService.scala:22)
+	at com.twitter.finagle.Service$$anon$1.apply(Service.scala:16)
+	at com.twitter.finagle.http.filter.Cors$HttpFilter.apply(Cors.scala:217)
+	at com.twitter.finagle.http.filter.Cors$HttpFilter.apply(Cors.scala:55)
+	at com.twitter.finagle.Filter$$anon$1.apply(Filter.scala:93)
+	at com.twitter.finagle.ServiceProxy.apply(ServiceProxy.scala:12)
+	at com.twitter.finagle.Service$$anon$1.apply(Service.scala:16)
+	at com.twitter.finagle.tracing.AnnotatingTracingFilter.apply(TraceInitializerFilter.scala:142)
+	at com.twitter.finagle.Filter$$anon$1.apply(Filter.scala:93)
+	at com.twitter.finagle.Service$$anon$1.apply(Service.scala:16)
+	at com.twitter.finagle.server.ThreadUsage$ThreadUsageFilter.apply(ThreadUsage.scala:130)
+	at com.twitter.finagle.Filter$$anon$1.apply(Filter.scala:93)
+	at com.twitter.finagle.Service$$anon$1.apply(Service.scala:16)
+	at com.twitter.finagle.tracing.ServerDestTracingFilter.apply(DestinationTracing.scala:38)
+	at com.twitter.finagle.Filter$$anon$1.apply(Filter.scala:93)
+	at com.twitter.finagle.Service$$anon$1.apply(Service.scala:16)
+	at com.twitter.finagle.service.DeadlineFilter.apply(DeadlineFilter.scala:265)
+	at com.twitter.finagle.Filter$$anon$1.apply(Filter.scala:93)
+	at com.twitter.finagle.Service$$anon$1.apply(Service.scala:16)
+	at com.twitter.finagle.filter.DtabStatsFilter.apply(DtabStatsFilter.scala:37)
+	at com.twitter.finagle.Filter$$anon$1.apply(Filter.scala:93)
+	at com.twitter.finagle.Service$$anon$1.apply(Service.scala:16)
+	at com.twitter.finagle.service.StatsFilter.apply(StatsFilter.scala:258)
+	at com.twitter.finagle.Filter$$anon$1.apply(Filter.scala:93)
+	at com.twitter.finagle.Service$$anon$1.apply(Service.scala:16)
+	at com.twitter.finagle.filter.ExceptionSourceFilter.apply(ExceptionSourceFilter.scala:50)
+	at com.twitter.finagle.Filter$$anon$1.apply(Filter.scala:93)
+	at com.twitter.finagle.Service$$anon$1.apply(Service.scala:16)
+	at com.twitter.finagle.filter.MkJvmFilter$$anon$1.apply(MkJvmFilter.scala:30)
+	at com.twitter.finagle.Filter$$anon$1.apply(Filter.scala:93)
+	at com.twitter.finagle.Service$$anon$1.apply(Service.scala:16)
+	at com.twitter.finagle.filter.ServerStatsFilter.apply(ServerStatsFilter.scala:55)
+	at com.twitter.finagle.Filter$$anon$1.apply(Filter.scala:93)
+	at com.twitter.finagle.Service$$anon$1.apply(Service.scala:16)
+	at com.twitter.finagle.tracing.AnnotatingTracingFilter.apply(TraceInitializerFilter.scala:142)
+	at com.twitter.finagle.Filter$$anon$1.apply(Filter.scala:93)
+	at com.twitter.finagle.Service$$anon$1.apply(Service.scala:16)
+	at com.twitter.finagle.http.filter.HttpNackFilter.apply(HttpNackFilter.scala:156)
+	at com.twitter.finagle.http.filter.HttpNackFilter.apply(HttpNackFilter.scala:113)
+	at com.twitter.finagle.Filter$$anon$1.apply(Filter.scala:93)
+	at com.twitter.finagle.Service$$anon$1.apply(Service.scala:16)
+	at com.twitter.finagle.http.filter.PayloadSizeFilter.apply(PayloadSizeFilter.scala:123)
+	at com.twitter.finagle.http.filter.PayloadSizeFilter.apply(PayloadSizeFilter.scala:47)
+	at com.twitter.finagle.Filter$$anon$1.apply(Filter.scala:93)
+	at com.twitter.finagle.Service$$anon$1.apply(Service.scala:16)
+	at com.twitter.finagle.server.BackupRequest$$anon$1$$anon$2.apply(BackupRequest.scala:31)
+	at com.twitter.finagle.Filter$$anon$1.apply(Filter.scala:93)
+	at com.twitter.finagle.Service$$anon$1.apply(Service.scala:16)
+	at com.twitter.finagle.http.filter.ServerContextFilter.$anonfun$apply$1(ContextFilter.scala:15)
+	at com.twitter.util.Local.let(Local.scala:4978)
+	at com.twitter.finagle.context.MarshalledContext.letLocal(MarshalledContext.scala:157)
+	at com.twitter.finagle.context.MarshalledContext.let(MarshalledContext.scala:104)
+	at com.twitter.finagle.http.codec.context.HttpContext$.read(HttpContext.scala:114)
+	at com.twitter.finagle.http.filter.ServerContextFilter.apply(ContextFilter.scala:15)
+	at com.twitter.finagle.http.filter.ServerContextFilter.apply(ContextFilter.scala:12)
+	at com.twitter.finagle.Filter$$anon$1.apply(Filter.scala:93)
+	at com.twitter.finagle.Service$$anon$1.apply(Service.scala:16)
+	at com.twitter.finagle.Service$$anon$1.apply(Service.scala:13)
+	at com.twitter.finagle.http.HttpServerTraceInitializer.$anonfun$make$3(HttpServerTraceInitializer.scala:20)
+	at com.twitter.finagle.http.TraceInfo$.$anonfun$letTraceIdFromRequestHeaders$1(TraceInfo.scala:105)
+	at com.twitter.util.Local.let(Local.scala:4978)
+	at com.twitter.finagle.context.MarshalledContext.letLocal(MarshalledContext.scala:157)
+	at com.twitter.finagle.context.MarshalledContext.let(MarshalledContext.scala:90)
+	at com.twitter.finagle.tracing.Trace$.letId(Trace.scala:104)
+	at com.twitter.finagle.http.TraceInfo$.letTraceIdFromRequestHeaders(TraceInfo.scala:103)
+	at com.twitter.finagle.http.HttpServerTraceInitializer.$anonfun$make$2(HttpServerTraceInitializer.scala:20)
+	at com.twitter.util.Local.let(Local.scala:4978)
+	at com.twitter.finagle.context.LocalContext.letLocal(LocalContext.scala:51)
+	at com.twitter.finagle.context.LocalContext.let(LocalContext.scala:24)
+	at com.twitter.finagle.tracing.Trace$.letTracer(Trace.scala:124)
+	at com.twitter.finagle.http.HttpServerTraceInitializer.$anonfun$make$1(HttpServerTraceInitializer.scala:20)
+	at com.twitter.finagle.Filter$$anon$16.apply(Filter.scala:406)
+	at com.twitter.finagle.Filter$$anon$1.apply(Filter.scala:93)
+	at com.twitter.finagle.Service$$anon$1.apply(Service.scala:16)
+	at com.twitter.finagle.filter.MonitorFilter.apply(MonitorFilter.scala:66)
+	at com.twitter.finagle.Filter$$anon$1.apply(Filter.scala:93)
+	at com.twitter.finagle.Service$$anon$1.apply(Service.scala:16)
+	at com.twitter.finagle.http.filter.DtabFilter.apply(DtabFilter.scala:25)
+	at com.twitter.finagle.http.filter.DtabFilter.apply(DtabFilter.scala:12)
+	at com.twitter.finagle.Filter$$anon$1.apply(Filter.scala:93)
+	at com.twitter.finagle.Service$$anon$1.apply(Service.scala:16)
+	at com.twitter.finagle.http.filter.StreamingStatsFilter.apply(StreamingStatsFilter.scala:131)
+	at com.twitter.finagle.http.filter.StreamingStatsFilter.apply(StreamingStatsFilter.scala:92)
+	at com.twitter.finagle.Filter$$anon$1.apply(Filter.scala:93)
+	at com.twitter.finagle.Service$$anon$1.apply(Service.scala:16)
+	at com.twitter.finagle.http.codec.ResponseConformanceFilter$.apply(ResponseConformanceFilter.scala:23)
+	at com.twitter.finagle.http.codec.ResponseConformanceFilter$.apply(ResponseConformanceFilter.scala:18)
+	at com.twitter.finagle.Filter$$anon$1.apply(Filter.scala:93)
+	at com.twitter.finagle.http.codec.HttpServerDispatcher.dispatch(HttpServerDispatcher.scala:42)
+	at com.twitter.finagle.http.codec.HttpServerDispatcher.dispatch(HttpServerDispatcher.scala:23)
+	at com.twitter.finagle.http.exp.GenStreamingSerialServerDispatcher.$anonfun$dispatchAndHandleFn$2(GenStreamingSerialServerDispatcher.scala:83)
+	at com.twitter.util.Local.let(Local.scala:4978)
+	at com.twitter.finagle.context.LocalContext.letLocal(LocalContext.scala:51)
+	at com.twitter.finagle.context.LocalContext.let(LocalContext.scala:28)
+	at com.twitter.finagle.http.exp.GenStreamingSerialServerDispatcher.$anonfun$dispatchAndHandleFn$1(GenStreamingSerialServerDispatcher.scala:83)
+	at com.twitter.util.Future.$anonfun$flatMap$1(Future.scala:1812)
+	at com.twitter.util.Promise$FutureTransformer.liftedTree1$1(Promise.scala:240)
+	at com.twitter.util.Promise$FutureTransformer.k(Promise.scala:240)
+	at com.twitter.util.Promise$Transformer.apply(Promise.scala:215)
+	at com.twitter.util.Promise$WaitQueue.com$twitter$util$Promise$WaitQueue$$run(Promise.scala:91)
+	at com.twitter.util.Promise$WaitQueue$$anon$1.run(Promise.scala:86)
+	at com.twitter.concurrent.LocalScheduler$Activation.run(Scheduler.scala:167)
+	at com.twitter.concurrent.LocalScheduler$Activation.submit(Scheduler.scala:126)
+	at com.twitter.concurrent.LocalScheduler.submit(Scheduler.scala:243)
+	at com.twitter.concurrent.Scheduler$.submit(Scheduler.scala:78)
+	at com.twitter.util.Promise$WaitQueue.runInScheduler(Promise.scala:86)
+	at com.twitter.util.Promise.updateIfEmpty(Promise.scala:783)
+	at com.twitter.util.Promise.update(Promise.scala:755)
+	at com.twitter.util.Promise.setValue(Promise.scala:731)
+	at com.twitter.concurrent.AsyncQueue.offer(AsyncQueue.scala:123)
+	at com.twitter.finagle.netty4.transport.ChannelTransport$$anon$2.channelRead(ChannelTransport.scala:169)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:93)
+	at com.twitter.finagle.netty4.channel.ChannelRequestStatsHandler.channelRead(ChannelRequestStatsHandler.scala:48)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at com.twitter.finagle.netty4.http.handler.UnpoolHttpHandler$.channelRead(UnpoolHttpHandler.scala:32)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at com.twitter.finagle.netty4.http.handler.BadRequestHandler.channelRead(BadRequestHandler.scala:42)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at com.twitter.finagle.netty4.http.handler.HeaderValidatorHandler$.channelRead(HeaderValidatorHandler.scala:51)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at com.twitter.finagle.netty4.http.handler.UriValidatorHandler$.channelRead(UriValidatorHandler.scala:29)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:102)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:102)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.handler.codec.MessageToMessageDecoder.channelRead(MessageToMessageDecoder.java:102)
+	at io.netty.handler.codec.MessageToMessageCodec.channelRead(MessageToMessageCodec.java:111)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.CombinedChannelDuplexHandler$DelegatingChannelHandlerContext.fireChannelRead(CombinedChannelDuplexHandler.java:436)
+	at io.netty.handler.codec.ByteToMessageDecoder.fireChannelRead(ByteToMessageDecoder.java:321)
+	at io.netty.handler.codec.ByteToMessageDecoder.channelRead(ByteToMessageDecoder.java:295)
+	at io.netty.channel.CombinedChannelDuplexHandler.channelRead(CombinedChannelDuplexHandler.java:251)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.ChannelInboundHandlerAdapter.channelRead(ChannelInboundHandlerAdapter.java:93)
+	at com.twitter.finagle.netty4.channel.ChannelStatsHandler.channelRead(ChannelStatsHandler.scala:156)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.AbstractChannelHandlerContext.fireChannelRead(AbstractChannelHandlerContext.java:357)
+	at io.netty.channel.DefaultChannelPipeline$HeadContext.channelRead(DefaultChannelPipeline.java:1410)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:379)
+	at io.netty.channel.AbstractChannelHandlerContext.invokeChannelRead(AbstractChannelHandlerContext.java:365)
+	at io.netty.channel.DefaultChannelPipeline.fireChannelRead(DefaultChannelPipeline.java:919)
+	at io.netty.channel.epoll.AbstractEpollStreamChannel$EpollStreamUnsafe.epollInReady(AbstractEpollStreamChannel.java:792)
+	at io.netty.channel.epoll.EpollEventLoop.processReady(EpollEventLoop.java:475)
+	at io.netty.channel.epoll.EpollEventLoop.run(EpollEventLoop.java:378)
+	at io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:989)
+	at io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at com.twitter.finagle.util.BlockingTimeTrackingThreadFactory$$anon$1.run(BlockingTimeTrackingThreadFactory.scala:23)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.lang.Thread.run(Thread.java:750)
+2022-08-24 07:36:08,093 INF                  Slf4jBridgeUtility$       org.slf4j.bridge.SLF4JBridgeHandler installed.
+2022-08-24 07:36:08,611 INF                  HttpMuxer$                HttpMuxer[/admin/metrics.json] = com.twitter.finagle.stats.MetricsExporter(com.twitter.finagle.stats.MetricsExporter)
+2022-08-24 07:36:08,612 INF                  HttpMuxer$                HttpMuxer[/admin/per_host_metrics.json] = com.twitter.finagle.stats.HostMetricsExporter(com.twitter.finagle.stats.HostMetricsExporter)
+2022-08-24 07:36:08,749 INF                  TestServer                Process started
+2022-08-24 07:36:08,848 INF                  TestServer                admin http is disabled and will not be started.
+2022-08-24 07:36:09,152 INF                  TestServer                Resolving Finagle clients before warmup
+2022-08-24 07:36:09,156 INF                  TestServer                Done resolving clients: [].
+2022-08-24 07:36:09,200 WAR                  FinagleBuildRevision$     Unable to resolve Finagle revision.
+2022-08-24 07:36:09,935 INF                  HttpRouter                Adding routes
+POST    /addUser
+GET     /getUser
+GET     /ping
+GET     /getProduct
+POST    /createProduct
+GET     /loan/detail
+GET     /loan
+POST    /loan/:lender_id
+2022-08-24 07:36:09,972 INF                  ThriftRouter              Adding methods
+CacheController.ping
+CacheController.addUser
+CacheController.getUser
+2022-08-24 07:36:09,974 INF                  TestServer                Warming up.
+2022-08-24 07:36:10,186 INF                  finagle                   Finagle version 20.5.0 (rev=413f28a1b26b9700bee91685235a6ca2a53fbe9b) built at 20200526-214546
+2022-08-24 07:36:10,262 INF                  TestServer                http server started on port: /127.0.0.1:0
+2022-08-24 07:36:10,358 INF                  TestServer                thrift server started on port: 36993
+2022-08-24 07:36:10,358 INF                  TestServer                admin http server is disabled
+2022-08-24 07:36:10,360 INF                  TestServer                com.projectz.TestServer started.
+2022-08-24 07:36:10,360 INF                  TestServer                Startup complete, server awaiting.
+2022-08-24 07:36:10,361 INF                  Awaiter$                  Awaiting 2 awaitables: 
+com.twitter.finagle.server.ListeningStackServer$$anon$1
+com.twitter.finagle.server.ListeningStackServer$$anon$1
+2022-08-24 07:37:09,014 INF                  Slf4jBridgeUtility$       org.slf4j.bridge.SLF4JBridgeHandler installed.
+2022-08-24 07:37:09,479 INF                  HttpMuxer$                HttpMuxer[/admin/metrics.json] = com.twitter.finagle.stats.MetricsExporter(com.twitter.finagle.stats.MetricsExporter)
+2022-08-24 07:37:09,479 INF                  HttpMuxer$                HttpMuxer[/admin/per_host_metrics.json] = com.twitter.finagle.stats.HostMetricsExporter(com.twitter.finagle.stats.HostMetricsExporter)
+2022-08-24 07:37:09,620 INF                  TestServer                Process started
+2022-08-24 07:37:09,712 INF                  TestServer                admin http is disabled and will not be started.
+2022-08-24 07:37:10,068 INF                  TestServer                Resolving Finagle clients before warmup
+2022-08-24 07:37:10,072 INF                  TestServer                Done resolving clients: [].
+2022-08-24 07:37:10,118 WAR                  FinagleBuildRevision$     Unable to resolve Finagle revision.
+2022-08-24 07:37:10,838 INF                  HttpRouter                Adding routes
+POST    /addUser
+GET     /getUser
+GET     /ping
+GET     /getProduct
+POST    /createProduct
+GET     /loan/detail
+GET     /loan
+POST    /loan/:lender_id
+2022-08-24 07:37:10,879 INF                  ThriftRouter              Adding methods
+CacheController.ping
+CacheController.addUser
+CacheController.getUser
+2022-08-24 07:37:10,881 INF                  TestServer                Warming up.
+2022-08-24 07:37:11,089 INF                  finagle                   Finagle version 20.5.0 (rev=413f28a1b26b9700bee91685235a6ca2a53fbe9b) built at 20200526-214546
+2022-08-24 07:37:11,164 INF                  TestServer                http server started on port: /127.0.0.1:0
+2022-08-24 07:37:11,260 INF                  TestServer                thrift server started on port: 39383
+2022-08-24 07:37:11,261 INF                  TestServer                admin http server is disabled
+2022-08-24 07:37:11,262 INF                  TestServer                com.projectz.TestServer started.
+2022-08-24 07:37:11,262 INF                  TestServer                Startup complete, server awaiting.
+2022-08-24 07:37:11,264 INF                  Awaiter$                  Awaiting 2 awaitables: 
+com.twitter.finagle.server.ListeningStackServer$$anon$1
+com.twitter.finagle.server.ListeningStackServer$$anon$1
+2022-08-24 07:38:40,014 INF                  Slf4jBridgeUtility$       org.slf4j.bridge.SLF4JBridgeHandler installed.
+2022-08-24 07:38:40,480 INF                  HttpMuxer$                HttpMuxer[/admin/metrics.json] = com.twitter.finagle.stats.MetricsExporter(com.twitter.finagle.stats.MetricsExporter)
+2022-08-24 07:38:40,481 INF                  HttpMuxer$                HttpMuxer[/admin/per_host_metrics.json] = com.twitter.finagle.stats.HostMetricsExporter(com.twitter.finagle.stats.HostMetricsExporter)
+2022-08-24 07:38:40,629 INF                  TestServer                Process started
+2022-08-24 07:38:40,738 INF                  TestServer                admin http is disabled and will not be started.
+2022-08-24 07:38:41,064 INF                  TestServer                Resolving Finagle clients before warmup
+2022-08-24 07:38:41,068 INF                  TestServer                Done resolving clients: [].
+2022-08-24 07:38:41,111 WAR                  FinagleBuildRevision$     Unable to resolve Finagle revision.
+2022-08-24 07:38:41,782 INF                  HttpRouter                Adding routes
+POST    /addUser
+GET     /getUser
+GET     /ping
+GET     /getProduct
+POST    /createProduct
+GET     /loan/detail
+GET     /loan
+POST    /loan/:lender_id
+2022-08-24 07:38:41,818 INF                  ThriftRouter              Adding methods
+CacheController.ping
+CacheController.addUser
+CacheController.getUser
+2022-08-24 07:38:41,819 INF                  TestServer                Warming up.
+2022-08-24 07:38:42,040 INF                  finagle                   Finagle version 20.5.0 (rev=413f28a1b26b9700bee91685235a6ca2a53fbe9b) built at 20200526-214546
+2022-08-24 07:38:42,119 INF                  TestServer                http server started on port: /127.0.0.1:0
+2022-08-24 07:38:42,215 INF                  TestServer                thrift server started on port: 37879
+2022-08-24 07:38:42,216 INF                  TestServer                admin http server is disabled
+2022-08-24 07:38:42,217 INF                  TestServer                com.projectz.TestServer started.
+2022-08-24 07:38:42,218 INF                  TestServer                Startup complete, server awaiting.
+2022-08-24 07:38:42,219 INF                  Awaiter$                  Awaiting 2 awaitables: 
+com.twitter.finagle.server.ListeningStackServer$$anon$1
+com.twitter.finagle.server.ListeningStackServer$$anon$1

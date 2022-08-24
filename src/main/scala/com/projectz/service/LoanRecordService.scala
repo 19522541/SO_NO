@@ -36,13 +36,8 @@ class LoanRecordServiceImpl @Inject()(
 
   override def updateRecord(updateLoanRecordRequest: UpdateLoanRecordRequest): LoanRecord = ???
 
-  override def getRecord(getLoanRecordRequest: GetLoanRecordRequest): Seq[LoanRecord] = {
-    LoanRecordRepository.show(getLoanRecordRequest.id)
+  override def getRecord(getLoanRecordRequest: GetLoanRecordRequest): Seq[LoanRecord] = ???
 
-  }
-
-  override def addRecord( loanRecord: LoanRecord): LoanRecord = {
-      LoanRecordRepository.add(loanRecord).get
-  }
+  override def addRecord( loanRecord: LoanRecord): LoanRecord = ???
 }
 
