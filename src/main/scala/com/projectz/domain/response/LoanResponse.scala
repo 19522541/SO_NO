@@ -1,5 +1,6 @@
 package com.projectz.domain.response
 
-import com.projectz.domain.LoanRecord
+import java.util.Date
 
-case class LoanResponse(id:String,loanRecord:LoanRecord)
+
+case class LoanResponse(loanAmount:Long, borrower:String,lender:String,loanReason:String="",createDate:Date=new Date())
