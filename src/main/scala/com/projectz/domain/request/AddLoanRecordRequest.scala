@@ -4,4 +4,4 @@ import com.projectz.domain.LoanRecord
 import com.twitter.finatra.http.annotations.QueryParam
 import com.twitter.finatra.validation.constraints.NotEmpty
 
-case class PostLoanRecordRequest(@QueryParam @NotEmpty id: String ,loanRecord:LoanRecord)
+case class AddLoanRecordRequest(@QueryParam @NotEmpty id: String ,loanRecord:LoanRecord)

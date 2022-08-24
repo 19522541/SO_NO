@@ -1,16 +1,17 @@
 package com.projectz.repository
 
-import com.projectz.domain.{LoanRecord, RecordModifier}
+import com.projectz.domain.LoanRecord
+import com.projectz.domain.request.UpdateLoanRecordRequest
 
 import java.lang.String
 
-trait  LoanRecordRepository[X,Y,Z]{
+trait  LoanRecordRepository[X,Y]{
     def add(y:Y):Option[Y]
     def show(x:X):Seq[Y]
     def delete(x:X):Y
-    def update(x:X,z:Z):Y
+   // def update(x:X,z:Y):Y
 }
-class LoadRecordStore extends LoanRecordRepository[String,LoanRecord,RecordModifier] {
+class LoadRecordStore extends LoanRecordRepository[String,LoanRecord] {
     var record: Seq[LoanRecord] =  Seq[LoanRecord]()
 
 
@@ -30,5 +31,5 @@ class LoadRecordStore extends LoanRecordRepository[String,LoanRecord,RecordModif
     record.dropWhile(_.id==x).head
   }
 
-  override def update(x: String, z: RecordModifier): LoanRecord = ???
+   def update( updateLoanRecordRequest: UpdateLoanRecordRequest): LoanRecord = ???
 }

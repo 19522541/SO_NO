@@ -1,7 +1,7 @@
 package com.projectz.module
 
 import com.google.inject.Provides
-import com.projectz.domain.{LoanRecord, RecordModifier, User, UserID, UserInfo}
+import com.projectz.domain.{LoanRecord, User, UserID, UserInfo}
 import com.projectz.repository.{CacheRepository, LoadRecordStore, LoanRecordRepository, OnMemoryCacheRepository}
 import com.projectz.service.{LoanRecordService, LoanRecordServiceImpl, ProductService, ProductServiceImpl}
 import com.twitter.inject.TwitterModule
