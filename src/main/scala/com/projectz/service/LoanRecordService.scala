@@ -1,43 +1,76 @@
 package com.projectz.service
 
-import com.projectz.domain.request.{GetLoanRecordRequest, UpdateLoanRecordRequest}
-import com.projectz.domain.{LoanRecord, User}
-import com.projectz.repository.LoanRecordRepository
-import com.twitter.util.Future
+import com.projectz.domain.LoanRecord
+import com.projectz.domain.response.LoanResponse
+import com.twitter.finatra.http.exceptions.NotFoundException
 
-import java.util.Date
 import javax.inject.Inject
-import scala.concurrent.duration.Deadline
 
+/**
+ * Định nghĩa các thao tác thêm xóa sửa của danh sách ghi nợ
+ */
 trait LoanService {
-  // Ham nay lấy danh sách các thông tin nghi nợ của chủ nợ
-  // Input: Id(String) của chủ nợ ;Output: danh sách(Seq[LoanRecord]) các khoảng nợ được ghi trước đó
-  def getRecord(getLoanRecordRequest: GetLoanRecordRequest): Seq[LoanRecord]
-  //Chủ nợ ghị n
-  //Input: là 1 object(LoanRecord)  lưu thong tin nợ ,Output: object(LoanRecord) là thể hiện chi tiết nợ đã ghi
-  def addRecord( loanRecord: LoanRecord): LoanRecord
-  // Xóa thông tin ghi nợ
-  //Input: id(String) của record nợ cần xóa ;Output: Object(LoanRecord) thông tin nợ đã xóa
-  def deleteRecord(id: String): LoanRecord
-  /// thay đổi thông tin nợ
-  //Input: object(UpdateLoanRecordRequest) đai diện cho các trường cần thay đổi và chứa id của record yêu cầu thay đổi
-  //Output: object (LoanRecord)  Record đã được thay đổi
-  def updateRecord(updateLoanRecordRequest: UpdateLoanRecordRequest ): LoanRecord
-}
-// LoanService description: Mô tả các method cần thiết của LoanService
-/// Thuận tiện cho việc thay đổi trong trường hợp bảng Record được ghi trên DB khác
-class LoanRecordServiceImpl @Inject()(
-                                       LoanRecordRepository: LoanRecordRepository[String, LoanRecord]
-                                     ) extends LoanService {
+  /**
+   * Chủ nợ thêm ghi nợ mới
+   * @param loanRecord Chi tiết nợ
+   * @return Trả về thông tin khi nợ mà chủ nợ  mới thực hiện thêm vào
+   */
+  @throws[NotFoundException]("khi chủ nợ không tồn tại")
+  @throws[InternalError]("gap bat cu exception nao")
+  def addRecord(loanRecord: LoanRecord): LoanRecord
 
-  override def deleteRecord(id: String): LoanRecord = {
-    LoanRecordRepository.delete(id)
+  /**
+   * Chủ nợ lấy ra danh sách con nợ của mình
+   *
+   * @param lenderId dataType String
+   * @param keyword  Từ khóa để tìm kiếm con nợ.Trong chường hợp keyword trống thì sẽ hiện ra tất cả con nợ của chủ nợ
+   * @return Danh sách các LoanResponse Object về tổng nợ của con nợ , với ngày tạo là của lần tạo ghi nợ gần nhất
+   */
+  @throws[NotFoundException]("Khi chủ nợ không tồn tại")
+  @throws[InternalError]("gap bat cu exception nao")
+  def getBorrowersOfLender(lenderId: String, keyword: String = ""):Seq[LoanResponse]
+
+  /**
+   * Chủ nợ lấy danh sách ghi nợ mà con nợ đã nợ mình
+   *
+   * @param lenderId  Id của chủ nợ
+   * @param borrowerId  Id của con nợ
+   * @return Trả về danh sách các ghi nợ đã thêm
+   */
+  @throws[NotFoundException]("Khi chủ nợ không tồn tại")
+  @throws[InternalError]("gap bat cu exception nao")
+  def getLoanDetailOfBorrower(lenderId: String, borrowerId: String): Seq[LoanResponse]
+
+}
+  //Chưa thực hiện đc gì cả
+  class LoanRecordServiceImpl @Inject()(
+                                         //    LoanRecordRepository: LoanRecordRepository[String, LoanRecord]
+                                       ) extends LoanService {
+    /**
+     * Chủ nợ thêm ghi nợ mới
+     *
+     * @param loanRecord Chi tiết nợ
+     * @return Trả về thông tin khi nợ mà chủ nợ  mới thực hiện thêm vào
+     */
+    override def addRecord(loanRecord: LoanRecord): LoanRecord = ???
+
+    /**
+     * Chủ nợ lấy ra danh sách con nợ của mình
+     *
+     * @param lenderId dataType String
+     * @param keyword  Từ khóa để tìm kiếm con nợ.Trong chường hợp keyword trống thì sẽ hiện ra tất cả con nợ của chủ nợ
+     * @return Danh sách các LoanResponse Object về tổng nợ của con nợ , với ngày tạo là của lần tạo ghi nợ gần nhất
+     */
+    override def getBorrowersOfLender(lenderId: String, keyword: String): Seq[LoanResponse] = ???
+
+    /**
+     * Chủ nợ lấy danh sách ghi nợ mà con nợ đã nợ mình
+     *
+     * @param lenderId   Id của chủ nợ
+     * @param borrowerId Id của con nợ
+     * @return Trả về danh sách các ghi nợ đã thêm
+     */
+    override def getLoanDetailOfBorrower(lenderId: String, borrowerId: String): Seq[LoanResponse] = ???
   }
 
-  override def updateRecord(updateLoanRecordRequest: UpdateLoanRecordRequest): LoanRecord = ???
-
-  override def getRecord(getLoanRecordRequest: GetLoanRecordRequest): Seq[LoanRecord] = ???
-
-  override def addRecord( loanRecord: LoanRecord): LoanRecord = ???
-}
 
