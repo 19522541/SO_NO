@@ -1,35 +1,34 @@
 package com.projectz.repository
 
 import com.projectz.domain.LoanRecord
-import com.projectz.domain.request.UpdateLoanRecordRequest
+import com.projectz.domain.response.LoanResponse
 
-import java.lang.String
+trait  LoanRecordRepository{
+  /**
+   *  THực hiện thêm ghi nợ vào nơi lưu chử
+   * @param loanRecord thông tin của ghi nợ mà chủ nợ muốn tạo
+   * @return  Chi tiết ghi nợ mới tọa
+   */
+  def save(loanRecord:LoanRecord):LoanRecord
 
-trait  LoanRecordRepository[X,Y]{
-    def add(y:Y):Option[Y]
-    def show(x:X):Seq[Y]
-    def delete(x:X):Y
+  /**
+   * Xuất ra danh sách các con nợ
+   * @param lenderId Id của chủ nợ
+   * @param keyword  từ khóa  liên quan đến tên của con nợ chủ nợ muốn tìm
+   * @return  danh sách các ghi nợ của các con nợ
+   */
+  def getBorrower(lenderId:String,keyword:String ) :Seq[LoanResponse]
 
+  /**
+   *  Xuất danh sách từ nơi lưu chử của con nợ
+   * @param lenderId Id của chủ nợ
+   * @param borrowerId Id của con nợ
+   * @return Danh sách ghi nợ của con
+   */
+  def getRecordOfBorrower(lenderId:String,borrowerId:String):Seq[LoanResponse]
 }
-class LoadRecordStore extends LoanRecordRepository[String,LoanRecord] {
-    var record: Seq[LoanRecord] =  Seq[LoanRecord]()
-
-
-  override def show(x: String): Seq[LoanRecord] = ???
-
-  override def add(y: LoanRecord): Option[LoanRecord] = {
-      try {
-        record:+y
-        Some(y)
-      }catch {
-        case e:Exception=> None
-      }
-  }
-
-
-  override def delete(x: String): LoanRecord = {
-    record.dropWhile(_.id==x).head
-  }
-
-   def update( updateLoanRecordRequest: UpdateLoanRecordRequest): LoanRecord = ???
+class LoadRecordStore extends LoanRecordRepository {
+  override def save(loanRecord: LoanRecord): LoanRecord = ???
+  override def getBorrower(lenderId: String, keyword: String): Seq[LoanResponse] = ???
+  override def getRecordOfBorrower(lenderId: String, borrowerId: String): Seq[LoanResponse] = ???
 }
