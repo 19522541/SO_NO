@@ -9,13 +9,13 @@ trait  LoanRecordRepository[X,Y]{
     def add(y:Y):Option[Y]
     def show(x:X):Seq[Y]
     def delete(x:X):Y
-   // def update(x:X,z:Y):Y
+
 }
 class LoadRecordStore extends LoanRecordRepository[String,LoanRecord] {
     var record: Seq[LoanRecord] =  Seq[LoanRecord]()
 
 
-  override def show(x: String): Seq[LoanRecord] = record.filter(_.lender.id==x)
+  override def show(x: String): Seq[LoanRecord] = record.filter(_.lender==x)
 
   override def add(y: LoanRecord): Option[LoanRecord] = {
       try {
