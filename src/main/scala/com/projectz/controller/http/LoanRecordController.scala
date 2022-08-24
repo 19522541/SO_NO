@@ -13,39 +13,50 @@ import javax.inject.Inject
 
 class LoanRecordController @Inject()(loanRecordService: LoanService) extends Controller {
   val formatter = new SimpleDateFormat("dd-MMM-yyyy")
-
-  get("/loan/:id/:borrower") { request: GetBorrowerRequest => {
+  get("/loan/detail") { request: GetBorrowerRequest => {
     Seq(
       LoanResponse(
         loanAmount = 150000,
         borrower = "Hao",
         lender = "Thien Vi",
         loanReason = "Muon xay nha",
-        createDate = formatter.parse("31-Dec-2022")
+        createdDate = formatter.parse("31-Dec-2022")
       )
     )
   }
   }
 
-  get("/loan/:id/:keyword") { request: GetLoanRecordRequest => {
+  get("/loan") { request: GetLoanRecordRequest => {
     //val userLoanRecord:Seq[LoanRecord]  =loanRecordService.getRecord(request)
-    Seq(("Vuong", 125000),
-      ("Thien", 200000)
+    Seq( LoanResponse(
+      loanAmount = 150000,
+      borrower = "Hao",
+      lender = "Thien Vi",
+      loanReason = "Muon xay nha",
+      createdDate = formatter.parse("31-Dec-2022")
+    ),
+      LoanResponse(
+        loanAmount = 120000,
+        borrower = "Vuong",
+        lender = "Thien Vi",
+        loanReason = "Muon xay nha",
+        createdDate = formatter.parse("31-Dec-2022")
+      )
     )
   }
   }
 
 
-  post("/loan/:id") {
+  post("/loan/:lender_id") {
     request: AddLoanRecordRequest => {
       //val addedItemRecordItem :LoanRecord=  loanRecordService.addRecord(request.loanRecord)
       LoanRecord(
         id="001",
         loanAmount = 100000,
-        borrower = "USERCODE2",
-        lender = "USERCODE1",
+        borrowerId = "USERCODE2",
+        lenderId = "USERCODE1",
         loanReason = "het tien do xang",
-        createDate = formatter.parse("31-Dec-2022")
+        createdDate = formatter.parse("31-Dec-2022")
       )
     }
   }
