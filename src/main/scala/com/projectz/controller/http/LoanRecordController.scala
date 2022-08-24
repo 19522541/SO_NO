@@ -2,7 +2,7 @@ package com.projectz.controller.http
 
 import com.projectz.domain.request.{AddLoanRecordRequest, GetLoanRecordRequest, UpdateLoanRecordRequest}
 import com.projectz.domain.{LoanRecord, UserID}
-import com.projectz.domain.response.{AddLoanResponse, DeletedLoanResponse, GetLoanResponse, LoanResponse, UpdateLoanResponse}
+import com.projectz.domain.response.LoanResponse
 import com.projectz.service.LoanService
 import com.twitter.finagle.http.Request
 import com.twitter.finatra.http.Controller
