@@ -12,7 +12,7 @@ object TestModule extends TwitterModule {
     bind[LoanRecordService].to[LoanRecordServiceImpl]
   }
   @Provides
-  def providesLoanRecordRepository(): LoanRecordRepository[User, LoanRecord] = {
+  def providesLoanRecordRepository(): LoanRecordRepository[String, LoanRecord,RecordModifier] = {
     new LoadRecordStore()
   }
 }
