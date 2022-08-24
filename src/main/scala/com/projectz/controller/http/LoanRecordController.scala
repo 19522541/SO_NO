@@ -1,88 +1,42 @@
 package com.projectz.controller.http
 
-import com.projectz.domain.request.{AddLoanRecordRequest, GetBorrowerRequest, GetLoanRecordRequest, UpdateLoanRecordRequest}
-import com.projectz.domain.{LoanRecord, UserID}
-import com.projectz.domain.response.LoanResponse
+import com.projectz.domain.LoanRecord
+import com.projectz.domain.request.{AddLoanRecordRequest, GetBorrowerRequest, GetLoanRecordRequest}
 import com.projectz.service.LoanService
-import com.twitter.finagle.http.Request
 import com.twitter.finatra.http.Controller
 
 import java.text.SimpleDateFormat
 import java.util.Date
 import javax.inject.Inject
 
-class LoanRecordController @Inject()() extends Controller {
+class LoanRecordController @Inject()(loanService: LoanService) extends Controller {
   val formatter = new SimpleDateFormat("dd-MMM-yyyy")
-  get("/loan/detail") { request: GetBorrowerRequest => {
 
-    Seq(
-      LoanResponse(
-        loanAmount = 150000,
-        borrower = "Hao",
-        lender = "Thien Vi",
-        loanReason = "Muon xay nha",
-        createdDate = formatter.parse("31-Dec-2022")
-      )
-    )
+  get("/loan/detail") { request: GetBorrowerRequest => {
+    val loanRecordsOfBorrower= loanService.getLoanDetailOfBorrower(request.lenderId,request.borrowerId)
+   loanRecordsOfBorrower
   }
   }
 
   get("/loan") { request: GetLoanRecordRequest => {
-    println(request.lenderId)
-    println(request.keyword)
-    //val userLoanRecord:Seq[LoanRecord]  =loanRecordService.getRecord(request)
-    Seq( LoanResponse(
-      loanAmount = 150000,
-      borrower = "Hao",
-      lender = "Thien Vi",
-      loanReason = "Muon xay nha",
-      createdDate = formatter.parse("31-Dec-2022")
-    ),
-      LoanResponse(
-        loanAmount = 120000,
-        borrower = "Vuong",
-        lender = "Thien Vi",
-        loanReason = "Muon xay nha",
-        createdDate = formatter.parse("31-Dec-2022")
-      )
-    )
+    val borrowers= loanService.getBorrowersOfLender(request.lenderId,request.keyword)
+    borrowers
   }
   }
 
 
   post("/loan/:lender_id") {
     request: AddLoanRecordRequest => {
-      println(s"Add request ${request.lenderId}=====")
-      //val addedItemRecordItem :LoanRecord=  loanRecordService.addRecord(request.loanRecord)
-      LoanRecord(
-        id="001",
-        loanAmount = 100000,
-        borrowerId = "USERCODE2",
-        lenderId = "USERCODE1",
-        loanReason = "het tien do xang",
-        createdDate = formatter.parse("31-Dec-2022")
-      )
+      val loanRecord = LoanRecord(id = "USER001",
+        loanAmount = request.loanAmount,
+        borrowerId = request.borrowerId,
+        lenderId = request.lenderId,
+        loanReason = request.loanReason,
+        createdDate = new Date())
+      val addedLoanRecord = loanService.addRecord(loanRecord)
+      addedLoanRecord
     }
   }
 
-  //  delete("/loan/:id") {
-  //    request: Request => {
-  //      //val deletedRecordItem: LoanRecord=   loanRecordService.deleteRecord(request.getParam("id"))
-  //      LoanResponse(
-  //        loanAmount = 10000,
-  //        borrower = "USERCODE2",
-  //        lender = "USERCODE1",
-  //      )
-  //    }
-  //  }
-  //  put("/loan:id") { request: UpdateLoanRecordRequest => {
-  //    //val updatedRecordItem: LoanRecord = loanRecordService.updateRecord(request)
-  //    LoanResponse(
-  //        loanAmount = 10000,
-  //        borrower = "USERCODE5",
-  //        lender = "USERCODE1",
-  //
-  //    )
-  //  }
-  //  }
+
 }

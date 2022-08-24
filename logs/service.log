@@ -8407,3 +8407,189 @@ CacheController.getUser
 2022-08-24 07:38:42,219 INF                  Awaiter$                  Awaiting 2 awaitables: 
 com.twitter.finagle.server.ListeningStackServer$$anon$1
 com.twitter.finagle.server.ListeningStackServer$$anon$1
+2022-08-24 10:19:17,794 INF                  Slf4jBridgeUtility$       org.slf4j.bridge.SLF4JBridgeHandler installed.
+2022-08-24 10:19:18,313 INF                  HttpMuxer$                HttpMuxer[/admin/metrics.json] = com.twitter.finagle.stats.MetricsExporter(com.twitter.finagle.stats.MetricsExporter)
+2022-08-24 10:19:18,313 INF                  HttpMuxer$                HttpMuxer[/admin/per_host_metrics.json] = com.twitter.finagle.stats.HostMetricsExporter(com.twitter.finagle.stats.HostMetricsExporter)
+2022-08-24 10:19:18,455 INF                  TestServer                Process started
+2022-08-24 10:19:18,548 INF                  TestServer                admin http is disabled and will not be started.
+2022-08-24 10:19:18,887 INF                  TestServer                Resolving Finagle clients before warmup
+2022-08-24 10:19:18,891 INF                  TestServer                Done resolving clients: [].
+2022-08-24 10:19:18,936 WAR                  FinagleBuildRevision$     Unable to resolve Finagle revision.
+2022-08-24 10:19:19,609 INF                  HttpRouter                Adding routes
+POST    /addUser
+GET     /getUser
+GET     /ping
+GET     /getProduct
+POST    /createProduct
+GET     /loan/detail
+GET     /loan
+POST    /loan/:lender_id
+2022-08-24 10:19:19,646 INF                  ThriftRouter              Adding methods
+CacheController.ping
+CacheController.addUser
+CacheController.getUser
+2022-08-24 10:19:19,647 INF                  TestServer                Warming up.
+2022-08-24 10:19:19,863 INF                  finagle                   Finagle version 20.5.0 (rev=413f28a1b26b9700bee91685235a6ca2a53fbe9b) built at 20200526-214546
+2022-08-24 10:19:19,939 INF                  TestServer                http server started on port: /127.0.0.1:0
+2022-08-24 10:19:20,043 INF                  TestServer                thrift server started on port: 42001
+2022-08-24 10:19:20,043 INF                  TestServer                admin http server is disabled
+2022-08-24 10:19:20,047 INF                  TestServer                com.projectz.TestServer started.
+2022-08-24 10:19:20,047 INF                  TestServer                Startup complete, server awaiting.
+2022-08-24 10:19:20,049 INF                  Awaiter$                  Awaiting 2 awaitables: 
+com.twitter.finagle.server.ListeningStackServer$$anon$1
+com.twitter.finagle.server.ListeningStackServer$$anon$1
+2022-08-24 10:21:35,485 INF                  Slf4jBridgeUtility$       org.slf4j.bridge.SLF4JBridgeHandler installed.
+2022-08-24 10:21:35,976 INF                  HttpMuxer$                HttpMuxer[/admin/metrics.json] = com.twitter.finagle.stats.MetricsExporter(com.twitter.finagle.stats.MetricsExporter)
+2022-08-24 10:21:35,977 INF                  HttpMuxer$                HttpMuxer[/admin/per_host_metrics.json] = com.twitter.finagle.stats.HostMetricsExporter(com.twitter.finagle.stats.HostMetricsExporter)
+2022-08-24 10:21:36,117 INF                  TestServer                Process started
+2022-08-24 10:21:36,216 INF                  TestServer                admin http is disabled and will not be started.
+2022-08-24 10:21:36,552 INF                  TestServer                Resolving Finagle clients before warmup
+2022-08-24 10:21:36,556 INF                  TestServer                Done resolving clients: [].
+2022-08-24 10:21:36,602 WAR                  FinagleBuildRevision$     Unable to resolve Finagle revision.
+2022-08-24 10:21:37,282 INF                  HttpRouter                Adding routes
+POST    /addUser
+GET     /getUser
+GET     /ping
+GET     /getProduct
+POST    /createProduct
+GET     /loan/detail
+GET     /loan
+POST    /loan/:lender_id
+2022-08-24 10:21:37,317 INF                  ThriftRouter              Adding methods
+CacheController.ping
+CacheController.addUser
+CacheController.getUser
+2022-08-24 10:21:37,318 INF                  TestServer                Warming up.
+2022-08-24 10:21:37,549 INF                  finagle                   Finagle version 20.5.0 (rev=413f28a1b26b9700bee91685235a6ca2a53fbe9b) built at 20200526-214546
+2022-08-24 10:21:37,627 INF                  TestServer                http server started on port: /127.0.0.1:0
+2022-08-24 10:21:37,725 INF                  TestServer                thrift server started on port: 41925
+2022-08-24 10:21:37,725 INF                  TestServer                admin http server is disabled
+2022-08-24 10:21:37,727 INF                  TestServer                com.projectz.TestServer started.
+2022-08-24 10:21:37,727 INF                  TestServer                Startup complete, server awaiting.
+2022-08-24 10:21:37,728 INF                  Awaiter$                  Awaiting 2 awaitables: 
+com.twitter.finagle.server.ListeningStackServer$$anon$1
+com.twitter.finagle.server.ListeningStackServer$$anon$1
+2022-08-24 10:21:52,353 INF                  Slf4jBridgeUtility$       org.slf4j.bridge.SLF4JBridgeHandler installed.
+2022-08-24 10:21:52,872 INF                  HttpMuxer$                HttpMuxer[/admin/metrics.json] = com.twitter.finagle.stats.MetricsExporter(com.twitter.finagle.stats.MetricsExporter)
+2022-08-24 10:21:52,872 INF                  HttpMuxer$                HttpMuxer[/admin/per_host_metrics.json] = com.twitter.finagle.stats.HostMetricsExporter(com.twitter.finagle.stats.HostMetricsExporter)
+2022-08-24 10:21:53,009 INF                  TestServer                Process started
+2022-08-24 10:21:53,100 INF                  TestServer                admin http is disabled and will not be started.
+2022-08-24 10:21:53,461 INF                  TestServer                Resolving Finagle clients before warmup
+2022-08-24 10:21:53,465 INF                  TestServer                Done resolving clients: [].
+2022-08-24 10:21:53,511 WAR                  FinagleBuildRevision$     Unable to resolve Finagle revision.
+2022-08-24 10:21:54,233 INF                  HttpRouter                Adding routes
+POST    /addUser
+GET     /getUser
+GET     /ping
+GET     /getProduct
+POST    /createProduct
+GET     /loan/detail
+GET     /loan
+POST    /loan/:lender_id
+2022-08-24 10:21:54,269 INF                  ThriftRouter              Adding methods
+CacheController.ping
+CacheController.addUser
+CacheController.getUser
+2022-08-24 10:21:54,271 INF                  TestServer                Warming up.
+2022-08-24 10:21:54,495 INF                  finagle                   Finagle version 20.5.0 (rev=413f28a1b26b9700bee91685235a6ca2a53fbe9b) built at 20200526-214546
+2022-08-24 10:21:54,569 INF                  TestServer                http server started on port: /127.0.0.1:0
+2022-08-24 10:21:54,663 INF                  TestServer                thrift server started on port: 39343
+2022-08-24 10:21:54,663 INF                  TestServer                admin http server is disabled
+2022-08-24 10:21:54,665 INF                  TestServer                com.projectz.TestServer started.
+2022-08-24 10:21:54,666 INF                  TestServer                Startup complete, server awaiting.
+2022-08-24 10:21:54,667 INF                  Awaiter$                  Awaiting 2 awaitables: 
+com.twitter.finagle.server.ListeningStackServer$$anon$1
+com.twitter.finagle.server.ListeningStackServer$$anon$1
+2022-08-24 10:22:23,769 INF                  Slf4jBridgeUtility$       org.slf4j.bridge.SLF4JBridgeHandler installed.
+2022-08-24 10:22:24,276 INF                  HttpMuxer$                HttpMuxer[/admin/metrics.json] = com.twitter.finagle.stats.MetricsExporter(com.twitter.finagle.stats.MetricsExporter)
+2022-08-24 10:22:24,276 INF                  HttpMuxer$                HttpMuxer[/admin/per_host_metrics.json] = com.twitter.finagle.stats.HostMetricsExporter(com.twitter.finagle.stats.HostMetricsExporter)
+2022-08-24 10:22:24,414 INF                  TestServer                Process started
+2022-08-24 10:22:24,513 INF                  TestServer                admin http is disabled and will not be started.
+2022-08-24 10:22:24,913 INF                  TestServer                Resolving Finagle clients before warmup
+2022-08-24 10:22:24,918 INF                  TestServer                Done resolving clients: [].
+2022-08-24 10:22:24,968 WAR                  FinagleBuildRevision$     Unable to resolve Finagle revision.
+2022-08-24 10:22:25,668 INF                  HttpRouter                Adding routes
+POST    /addUser
+GET     /getUser
+GET     /ping
+GET     /getProduct
+POST    /createProduct
+GET     /loan/detail
+GET     /loan
+POST    /loan/:lender_id
+2022-08-24 10:22:25,703 INF                  ThriftRouter              Adding methods
+CacheController.ping
+CacheController.addUser
+CacheController.getUser
+2022-08-24 10:22:25,705 INF                  TestServer                Warming up.
+2022-08-24 10:22:25,937 INF                  finagle                   Finagle version 20.5.0 (rev=413f28a1b26b9700bee91685235a6ca2a53fbe9b) built at 20200526-214546
+2022-08-24 10:22:26,017 INF                  TestServer                http server started on port: /127.0.0.1:0
+2022-08-24 10:22:26,111 INF                  TestServer                thrift server started on port: 46165
+2022-08-24 10:22:26,111 INF                  TestServer                admin http server is disabled
+2022-08-24 10:22:26,113 INF                  TestServer                com.projectz.TestServer started.
+2022-08-24 10:22:26,113 INF                  TestServer                Startup complete, server awaiting.
+2022-08-24 10:22:26,114 INF                  Awaiter$                  Awaiting 2 awaitables: 
+com.twitter.finagle.server.ListeningStackServer$$anon$1
+com.twitter.finagle.server.ListeningStackServer$$anon$1
+2022-08-24 10:29:29,685 INF                  Slf4jBridgeUtility$       org.slf4j.bridge.SLF4JBridgeHandler installed.
+2022-08-24 10:29:30,208 INF                  HttpMuxer$                HttpMuxer[/admin/metrics.json] = com.twitter.finagle.stats.MetricsExporter(com.twitter.finagle.stats.MetricsExporter)
+2022-08-24 10:29:30,209 INF                  HttpMuxer$                HttpMuxer[/admin/per_host_metrics.json] = com.twitter.finagle.stats.HostMetricsExporter(com.twitter.finagle.stats.HostMetricsExporter)
+2022-08-24 10:29:30,336 INF                  TestServer                Process started
+2022-08-24 10:29:30,436 INF                  TestServer                admin http is disabled and will not be started.
+2022-08-24 10:29:30,759 INF                  TestServer                Resolving Finagle clients before warmup
+2022-08-24 10:29:30,765 INF                  TestServer                Done resolving clients: [].
+2022-08-24 10:29:30,808 WAR                  FinagleBuildRevision$     Unable to resolve Finagle revision.
+2022-08-24 10:29:31,541 INF                  HttpRouter                Adding routes
+POST    /addUser
+GET     /getUser
+GET     /ping
+GET     /getProduct
+POST    /createProduct
+GET     /loan/detail
+GET     /loan
+POST    /loan/:lender_id
+2022-08-24 10:29:31,590 INF                  ThriftRouter              Adding methods
+CacheController.ping
+CacheController.addUser
+CacheController.getUser
+2022-08-24 10:29:31,592 INF                  TestServer                Warming up.
+2022-08-24 10:29:31,824 INF                  finagle                   Finagle version 20.5.0 (rev=413f28a1b26b9700bee91685235a6ca2a53fbe9b) built at 20200526-214546
+2022-08-24 10:29:31,900 INF                  TestServer                http server started on port: /127.0.0.1:0
+2022-08-24 10:29:31,992 INF                  TestServer                thrift server started on port: 40113
+2022-08-24 10:29:31,992 INF                  TestServer                admin http server is disabled
+2022-08-24 10:29:31,994 INF                  TestServer                com.projectz.TestServer started.
+2022-08-24 10:29:31,994 INF                  TestServer                Startup complete, server awaiting.
+2022-08-24 10:29:31,995 INF                  Awaiter$                  Awaiting 2 awaitables: 
+com.twitter.finagle.server.ListeningStackServer$$anon$1
+com.twitter.finagle.server.ListeningStackServer$$anon$1
+2022-08-24 10:32:10,243 INF                  Slf4jBridgeUtility$       org.slf4j.bridge.SLF4JBridgeHandler installed.
+2022-08-24 10:32:10,769 INF                  HttpMuxer$                HttpMuxer[/admin/metrics.json] = com.twitter.finagle.stats.MetricsExporter(com.twitter.finagle.stats.MetricsExporter)
+2022-08-24 10:32:10,769 INF                  HttpMuxer$                HttpMuxer[/admin/per_host_metrics.json] = com.twitter.finagle.stats.HostMetricsExporter(com.twitter.finagle.stats.HostMetricsExporter)
+2022-08-24 10:32:10,885 INF                  TestServer                Process started
+2022-08-24 10:32:10,987 INF                  TestServer                admin http is disabled and will not be started.
+2022-08-24 10:32:11,323 INF                  TestServer                Resolving Finagle clients before warmup
+2022-08-24 10:32:11,329 INF                  TestServer                Done resolving clients: [].
+2022-08-24 10:32:11,377 WAR                  FinagleBuildRevision$     Unable to resolve Finagle revision.
+2022-08-24 10:32:12,080 INF                  HttpRouter                Adding routes
+POST    /addUser
+GET     /getUser
+GET     /ping
+GET     /getProduct
+POST    /createProduct
+GET     /loan/detail
+GET     /loan
+POST    /loan/:lender_id
+2022-08-24 10:32:12,119 INF                  ThriftRouter              Adding methods
+CacheController.ping
+CacheController.addUser
+CacheController.getUser
+2022-08-24 10:32:12,120 INF                  TestServer                Warming up.
+2022-08-24 10:32:12,344 INF                  finagle                   Finagle version 20.5.0 (rev=413f28a1b26b9700bee91685235a6ca2a53fbe9b) built at 20200526-214546
+2022-08-24 10:32:12,420 INF                  TestServer                http server started on port: /127.0.0.1:0
+2022-08-24 10:32:12,513 INF                  TestServer                thrift server started on port: 37841
+2022-08-24 10:32:12,513 INF                  TestServer                admin http server is disabled
+2022-08-24 10:32:12,515 INF                  TestServer                com.projectz.TestServer started.
+2022-08-24 10:32:12,515 INF                  TestServer                Startup complete, server awaiting.
+2022-08-24 10:32:12,516 INF                  Awaiter$                  Awaiting 2 awaitables: 
+com.twitter.finagle.server.ListeningStackServer$$anon$1
+com.twitter.finagle.server.ListeningStackServer$$anon$1

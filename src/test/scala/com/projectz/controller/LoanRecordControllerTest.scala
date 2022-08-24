@@ -1,6 +1,7 @@
 package com.projectz.controller
 
 import com.projectz.TestServer
+import com.projectz.domain.LoanRecord
 import com.projectz.domain.response.LoanResponse
 import com.projectz.util.JsonUtils
 import com.twitter.finagle.http.Response
@@ -25,14 +26,15 @@ class LoanRecordControllerTest extends FeatureTest{
       assert(lendResponses.size==2)
   }
   test("[HTTP] Post add new  load record of lender"){
-    server.httpPost(path = "/loan/001",postBody =
+    val response =server.httpPost(path = "/loan/001",postBody =
       """
         |{
         |"borrower_id":"001",
         |"loan_reason":"Mua nha",
         |"loan_amount":1111000
         |}
-        |""".stripMargin, andExpect = Ok)
-
+        |""".stripMargin,andExpect = Ok)
+    val lendResponses:LoanRecord = JsonUtils.fromJson[LoanRecord](response.contentString)
+    assert(lendResponses.lenderId=="001")
   }
 }
