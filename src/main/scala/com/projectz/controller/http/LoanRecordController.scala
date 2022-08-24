@@ -27,13 +27,8 @@ class LoanRecordController @Inject()(loanService: LoanService) extends Controlle
 
   post("/loan/:lender_id") {
     request: AddLoanRecordRequest => {
-      val loanRecord = LoanRecord(id = "USER001",
-        loanAmount = request.loanAmount,
-        borrowerId = request.borrowerId,
-        lenderId = request.lenderId,
-        loanReason = request.loanReason,
-        createdDate = new Date())
-      val addedLoanRecord = loanService.addRecord(loanRecord)
+
+      val addedLoanRecord = loanService.addRecord(request)
       addedLoanRecord
     }
   }

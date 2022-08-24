@@ -1,6 +1,7 @@
 package com.projectz.repository
 
 import com.projectz.domain.LoanRecord
+import com.projectz.domain.request.AddLoanRecordRequest
 import com.projectz.domain.response.LoanResponse
 
 import java.util.Date
@@ -12,7 +13,7 @@ trait LoanRecordRepository {
    * @param loanRecord thông tin của ghi nợ mà chủ nợ muốn tạo
    * @return Chi tiết ghi nợ mới tọa
    */
-  def save(loanRecord: LoanRecord): LoanRecord
+  def save(loanRecord: AddLoanRecordRequest): LoanRecord
 
   /**
    * Xuất ra danh sách các con nợ
@@ -34,7 +35,7 @@ trait LoanRecordRepository {
 }
 
 class LoadRecordStore extends LoanRecordRepository {
-  override def save(loanRecord: LoanRecord): LoanRecord = ???
+  override def save(loanRecord: AddLoanRecordRequest): LoanRecord = ???
 
   override def getBorrower(lenderId: String, keyword: String): Seq[LoanResponse] = ???
 
@@ -43,8 +44,13 @@ class LoadRecordStore extends LoanRecordRepository {
 
 class MockLoanRecordRepository extends LoanRecordRepository {
 
-  override def save(loanRecord: LoanRecord): LoanRecord = {
-    loanRecord
+  override def save(loanRecord: AddLoanRecordRequest): LoanRecord = {
+    LoanRecord(id="0002",
+      lenderId = loanRecord.lenderId,
+      borrowerId = loanRecord.borrowerId,
+      loanAmount = loanRecord.loanAmount,
+      loanReason = loanRecord.loanReason,
+      createdDate = new Date())
   }
 
   override def getBorrower(lenderId: String, keyword: String): Seq[LoanResponse] = {

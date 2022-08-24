@@ -1,6 +1,7 @@
 package com.projectz.service
 
 import com.projectz.domain.LoanRecord
+import com.projectz.domain.request.AddLoanRecordRequest
 import com.projectz.domain.response.LoanResponse
 import com.projectz.repository.LoanRecordRepository
 import com.twitter.finatra.http.exceptions.NotFoundException
@@ -19,7 +20,7 @@ trait LoanService {
    */
   @throws[NotFoundException]("khi chủ nợ không tồn tại")
   @throws[InternalError]("gap bat cu exception nao")
-  def addRecord(loanRecord: LoanRecord): LoanRecord
+  def addRecord(loanRecord: AddLoanRecordRequest): LoanRecord
 
   /**
    * Chủ nợ lấy ra danh sách con nợ của mình
@@ -48,7 +49,7 @@ class LoanRecordServiceImpl @Inject()(
                                        loanRecordRepository: LoanRecordRepository
                                      ) extends LoanService {
 
-  override def addRecord(loanRecord: LoanRecord): LoanRecord = {
+  override def addRecord(loanRecord: AddLoanRecordRequest): LoanRecord = {
     val newRecord: LoanRecord = loanRecordRepository.save(loanRecord)
      newRecord
   }
