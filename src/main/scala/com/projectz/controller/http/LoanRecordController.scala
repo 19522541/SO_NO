@@ -10,24 +10,29 @@ import java.util.Date
 import javax.inject.Inject
 
 class LoanRecordController @Inject()(loanService: LoanService) extends Controller {
-  val formatter = new SimpleDateFormat("dd-MMM-yyyy")
 
   get("/loan/detail") { request: GetBorrowerRequest => {
-    val loanRecordsOfBorrower= loanService.getLoanDetailOfBorrower(request.lenderId,request.borrowerId)
-   loanRecordsOfBorrower
+    val loanRecordsOfBorrower= loanService.getLoanDetailOfBorrower(request.lender,request.borrower)
+    loanRecordsOfBorrower
   }
   }
 
   get("/loan") { request: GetLoanRecordRequest => {
-    val borrowers= loanService.getBorrowersOfLender(request.lenderId,request.keyword)
-    borrowers
+    try {
+      val borrowers= loanService.getBorrowersOfLender(request.lender,request.keyword)
+      println(s"LoanRecordCotroller::get::keyword== ${request.keyword}")
+      println(s"LoanRecordCotroller::get::keyword== ${request.lender}")
+
+      borrowers
+    } catch {
+      case ex: Throwable => logger.error(s"LoanController::getLoan ${ex.getMessage}")
+    }
   }
   }
 
 
-  post("/loan/:lender_id") {
+  post("/loan/:lender") {
     request: AddLoanRecordRequest => {
-
       val addedLoanRecord = loanService.addRecord(request)
       addedLoanRecord
     }

@@ -9,6 +9,7 @@ import com.twitter.finagle.http.Status.Ok
 import com.twitter.finatra.http.EmbeddedHttpServer
 import com.twitter.finatra.thrift.ThriftClient
 import com.twitter.inject.server.FeatureTest
+import org.yaml.snakeyaml.util.UriEncoder
 
 class LoanRecordControllerTest extends FeatureTest{
 
@@ -16,25 +17,25 @@ class LoanRecordControllerTest extends FeatureTest{
     twitterServer = new TestServer
   ) with ThriftClient
   test("[HTTP] get record of borrower"){
-    val response: Response = server.httpGet(path = "/loan/detail?lender_id=001&borrower_id=002", andExpect = Ok)
+
+    val response: Response = server.httpGet(path ="/loan/detail?lender=VUong&borrower=LUOGN", andExpect = Ok)
     val lendResponses:Seq[LoanResponse] = JsonUtils.fromJson[Seq[LoanResponse]](response.contentString)
-    assert(lendResponses.size == 1)
   }
   test("[HTTP] get  borrowers of lender by keyword"){
-    val response= server.httpGet(path = "/loan?lender_id=001&keyword=HUU", andExpect = Ok)
+    val response= server.httpGet(path = "/loan?lender=VUong&keyword=VUong")
       val lendResponses:Seq[LoanResponse] = JsonUtils.fromJson[Seq[LoanResponse]](response.contentString)
-      assert(lendResponses.size==2)
+
   }
   test("[HTTP] Post add new  load record of lender"){
-    val response =server.httpPost(path = "/loan/001",postBody =
+    val response =server.httpPost(path = "/loan/HUUVUong",postBody =
       """
         |{
-        |"borrower_id":"001",
+        |"borrower":"001",
         |"loan_reason":"Mua nha",
         |"loan_amount":1111000
         |}
         |""".stripMargin,andExpect = Ok)
     val lendResponses:LoanRecord = JsonUtils.fromJson[LoanRecord](response.contentString)
-    assert(lendResponses.lenderId=="001")
+
   }
 }

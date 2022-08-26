@@ -13,20 +13,31 @@ class LoanRecordServiceTest extends IntegrationTest{
   private val service = injector.instance[LoanService]
   test( "CREATE new LoanRecord"){
     val addRequest:AddLoanRecordRequest=AddLoanRecordRequest(
-
       loanAmount = 10000,
-      borrowerId = "USERID002",
-      lenderId = "USERID003",
-      loanReason = "MUON MUA NHA"   )
+      borrower = "LUOGN ",
+      lender = "VUong",
+      loanReason = "MUON MUA NHA")
    val createdResult= service.addRecord(addRequest)
-    assert(createdResult.lenderId==addRequest.lenderId)
+    assert(createdResult.lender==addRequest.lender)
   }
   test( "Get borrowers of lender"){
-    val borrowers= service.getBorrowersOfLender("001","VUONG")
-    assert(borrowers.size==2)
+    val borrowers= service.getBorrowersOfLender("LUONG HUU VUong","ng Hữu Vư")
+    assert(borrowers.size==1)
+  }
+  test( "Get borrowers of lender empty keyword"){
+    val borrowers= service.getBorrowersOfLender("Nguyễn Văn B","")
+    assert(borrowers.size==1)
+  }
+  test( "Get borrowers of anonymous lender"){
+    val borrowers= service.getBorrowersOfLender("","")
+    assert(borrowers.size==0)
   }
   test( "Loan Record of Borrower" ){
-    val loadRecord = service.getLoanDetailOfBorrower(lenderId = "001",borrowerId = "002")
-    assert(loadRecord.size==1  )
+    val loadRecord = service.getLoanDetailOfBorrower(lender = "LUONG HUU VUong",borrower = "Lương Hữu Vương")
+    assert(loadRecord.size==1 )
   }
+  test("is DB connected??"){
+   assert(service.isConnect())
+  }
+
 }

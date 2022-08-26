@@ -9,27 +9,24 @@ import com.projectz.util.Implicits.FutureEnhance
 class UserCacheServiceTest extends IntegrationTest {
 
 
-  override protected def injector: Injector =  Injector(Guice.createInjector(Seq(MainModule):_*))
+  override protected def injector: Injector = Injector(Guice.createInjector(Seq(MainModule): _*))
 
   private val service = injector.instance[UserCacheService]
-
-
   test(" Put cache successfull") {
-
-    service.addUser(UserID("1"),UserInfo(
+    service.addUser(UserID("1"), UserInfo(
       UserID("1"),
       "test_1",
       99,
       "male"
     ))
-
-
   }
+
 
   test("be able to get back") {
     val userInfo = service.getUser(UserID("1")).sync()
 
     assert(userInfo != null)
   }
-
 }
+
+

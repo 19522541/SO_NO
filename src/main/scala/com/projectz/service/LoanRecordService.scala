@@ -25,46 +25,49 @@ trait LoanService {
   /**
    * Chủ nợ lấy ra danh sách con nợ của mình
    *
-   * @param lenderId Id của chủ nợ
+   * @param lender Id của chủ nợ
    * @param keyword  Từ khóa để tìm kiếm con nợ.Trong chường hợp keyword trống thì sẽ hiện ra tất cả con nợ của chủ nợ
    * @return Danh sách các LoanResponse Object về tổng nợ của con nợ , với ngày tạo là của lần tạo ghi nợ gần nhất
    */
   @throws[NotFoundException]("Khi chủ nợ không tồn tại")
   @throws[InternalError]("gap bat cu exception nao")
-  def getBorrowersOfLender(lenderId: String, keyword: String = ""): Seq[LoanResponse]
+  def getBorrowersOfLender(lender: String, keyword: String): Seq[LoanResponse]
 
   /**
    * Chủ nợ lấy danh sách ghi nợ mà con nợ đã nợ mình
    *
-   * @param lenderId   Id của chủ nợ
-   * @param borrowerId Id của con nợ
+   * @param lender   Id của chủ nợ
+   * @param borrower Id của con nợ
    * @return Trả về danh sách các ghi nợ đã thêm
    */
   @throws[NotFoundException]("Khi chủ nợ không tồn tại")
   @throws[InternalError]("gap bat cu exception nao")
-  def getLoanDetailOfBorrower(lenderId: String, borrowerId: String): Seq[LoanResponse]
+  def getLoanDetailOfBorrower(lender: String, borrower: String): Seq[LoanResponse]
+  def isConnect():Boolean
 }
 
-class LoanRecordServiceImpl @Inject()(
+
+  class LoanRecordServiceImpl @Inject()(
                                        loanRecordRepository: LoanRecordRepository
                                      ) extends LoanService {
-
   override def addRecord(loanRecord: AddLoanRecordRequest): LoanRecord = {
     val newRecord: LoanRecord = loanRecordRepository.save(loanRecord)
      newRecord
   }
+  override def getBorrowersOfLender(lender: String, keyword: String): Seq[LoanResponse] = {
 
-
-  override def getBorrowersOfLender(lenderId: String, keyword: String): Seq[LoanResponse] = {
-    val borrowers: Seq[LoanResponse] = loanRecordRepository.getBorrower(lenderId, keyword)
+    val borrowers: Seq[LoanResponse] = loanRecordRepository.getBorrower(lender, keyword)
     borrowers
   }
 
-
-  override def getLoanDetailOfBorrower(lenderId: String, borrowerId: String): Seq[LoanResponse] = {
-    val loadDetailOfBorrower: Seq[LoanResponse] = loanRecordRepository.getRecordOfBorrower(lenderId, borrowerId)
+  override def getLoanDetailOfBorrower(lender: String, borrower: String): Seq[LoanResponse] = {
+    val loadDetailOfBorrower: Seq[LoanResponse] = loanRecordRepository.getRecordOfBorrower(lender, borrower)
     loadDetailOfBorrower
   }
-}
+
+    override def isConnect(): Boolean = {
+      loanRecordRepository.isConnected()
+    }
+  }
 
 
