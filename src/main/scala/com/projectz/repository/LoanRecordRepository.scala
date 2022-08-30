@@ -1,12 +1,12 @@
 package com.projectz.repository
 
-import com.projectz.domain.LoanRecord
+import com.projectz.domain.{Loan, LoanRecord}
 import com.projectz.domain.request.AddLoanRecordRequest
 import com.projectz.domain.response.LoanResponse
+import com.twitter.util.Config.intoList
 
 import java.sql.{Connection, DriverManager, ResultSet, SQLException, Statement}
-
-import java.util.Date
+import java.util.{Date, UUID}
 import javax.inject.Inject
 
 trait LoanRecordRepository {
@@ -25,7 +25,7 @@ trait LoanRecordRepository {
    * @param keyword từ khóa  liên quan đến tên của con nợ chủ nợ muốn tìm
    * @return danh sách các ghi nợ của các con nợ
    */
-  def getBorrower(lender: String, keyword: String): Seq[LoanResponse]
+  def getBorrowersOfLender(lender: String, userIds: Seq[String]): Seq[Loan]
 
   /**
    * Xuất danh sách từ nơi lưu chử của con nợ
@@ -34,9 +34,8 @@ trait LoanRecordRepository {
    * @param borrower tên của con nợ
    * @return Danh sách ghi nợ của con
    */
-  def getRecordOfBorrower(lender: String, borrower: String): Seq[LoanResponse]
+  def getRecordOfBorrower(lender: String, borrower: String): Seq[LoanRecord]
 
-  def isConnected(): Boolean
 }
 
 class LoanRepositoryImpl @Inject()(client: JDBCClient) extends LoanRecordRepository {
@@ -44,66 +43,68 @@ class LoanRepositoryImpl @Inject()(client: JDBCClient) extends LoanRecordReposit
   override def save(loanRecord: AddLoanRecordRequest): LoanRecord = {
 
     val connection = client.getConnection()
-    val query = "insert into loan_record(id,lender,borrower,amount,reason,created_date) values (UUID(),?,?,?,?,CURDATE())"
+    val query = "insert into loan_record(id,lender,borrower,amount,reason,created_date) values (?,?,?,?,?,CURDATE())"
     val preparedStatement = connection.prepareStatement(query)
-    preparedStatement.setString(1,loanRecord.lender )
-    preparedStatement.setString(2,loanRecord.borrower)
-    preparedStatement.setInt(3,loanRecord.loanAmount.toInt)
-    preparedStatement.setString(4,loanRecord.loanReason)
-    println(preparedStatement.toString)
+    val id: String = UUID.randomUUID().toString
+    preparedStatement.setString(1, id)
+    preparedStatement.setString(2, loanRecord.lender)
+    preparedStatement.setString(3, loanRecord.borrower)
+    preparedStatement.setInt(4, loanRecord.loanAmount.toInt)
+    preparedStatement.setString(5, loanRecord.loanReason)
     preparedStatement.execute()
-
     connection.close()
-   LoanRecord(id="HIDDEN",loanAmount = loanRecord.loanAmount,
-     lender=loanRecord.lender,borrower=loanRecord.borrower,
-     loanReason = loanRecord.loanReason, createdDate = new Date()
-   )
+    LoanRecord(id = id, loanAmount = loanRecord.loanAmount,
+      lender = loanRecord.lender, borrower = loanRecord.borrower,
+      loanReason = loanRecord.loanReason, createdDate = new Date()
+    )
   }
-  override def getBorrower(lender: String, keyword: String): Seq[LoanResponse] = {
-    print(s"LoanRecordResponsitory::getBorrow::keyword ${keyword}")
-    val newKeyword= "%"+keyword+"%"
-    var loanRecords = Seq[LoanResponse]()
+
+  override def getBorrowersOfLender(lender: String, userIds: Seq[String]): Seq[Loan] = {
+    var borrower = Seq[Loan]()
     val connection = client.getConnection()
-    val query = s"select * from loan_record WHERE lender=? and borrower like ?"
-    val preparedStatement = connection.prepareStatement(query)
-    preparedStatement.setString(1, lender)
-    preparedStatement.setString(2,newKeyword)
-    val sqlQueryResult: ResultSet = preparedStatement.executeQuery()
-    while (sqlQueryResult.next()) {
-      loanRecords= loanRecords:+ LoanResponse(
-        loanAmount = sqlQueryResult.getLong("amount"),
-        borrower = sqlQueryResult.getString("borrower"),
-        lender = sqlQueryResult.getString("lender"),
-        loanReason = sqlQueryResult.getString("reason"),
-        createdDate = sqlQueryResult.getDate("created_date")
-      )
-    }
+    userIds.foreach(id => {
+      val query = s"select borrower,SUM(amount) from loan_record WHERE lender =?and borrower=? GROUP BY  borrower"
+      //val query = s"select * from loan_record WHERE lender=? and borrower = ?"
+      val preparedStatement = connection.prepareStatement(query)
+      preparedStatement.setString(1, lender)
+      preparedStatement.setString(2, id)
+      val resultSet: ResultSet = preparedStatement.executeQuery()
+      while (resultSet.next()) {
+        borrower = borrower :+ Loan(borrower = resultSet.getString("borrower"), amount = resultSet.getInt("SUM(amount)"))
+      }
+    })
     connection.close()
-    loanRecords
-
+    borrower
   }
-  override def getRecordOfBorrower(lender: String, borrower: String): Seq[LoanResponse] = {
-    var loanRecords = Seq[LoanResponse]()
+
+  override def getRecordOfBorrower(lender: String, borrower: String): Seq[LoanRecord] = {
     val connection = client.getConnection()
     val query = s"select * from loan_record WHERE lender=? and borrower=?"
     val preparedStatement = connection.prepareStatement(query)
     preparedStatement.setString(1, lender)
-    preparedStatement.setString(2,borrower)
-    val sqlQueryResult: ResultSet = preparedStatement.executeQuery()
-    while (sqlQueryResult.next()) {
-     loanRecords= loanRecords:+ LoanResponse(
-        loanAmount = sqlQueryResult.getLong("amount"),
-        borrower = sqlQueryResult.getString("borrower"),
-        lender = sqlQueryResult.getString("lender"),
-        loanReason = sqlQueryResult.getString("reason"),
-        createdDate = sqlQueryResult.getDate("created_date")
-      )
-    }
-    connection.close()
-    loanRecords
+    preparedStatement.setString(2, borrower)
+    val resultSet: ResultSet = preparedStatement.executeQuery()
+    convertResultSetToLoanRecordSeqAndDisconnDB(resultSet, connection)
   }
 
-  override def isConnected(): Boolean = ???
+  def convertResultSetToLoanRecordSeqAndDisconnDB(resultSet: ResultSet, connection: Connection = null): Seq[LoanRecord] = {
+    var loanRecords = Seq[LoanRecord]()
+    while (resultSet.next()) {
+      loanRecords = loanRecords :+ LoanRecord(
+        id = resultSet.getString("id"),
+        loanAmount = resultSet.getLong("amount"),
+        borrower = resultSet.getString("borrower"),
+        lender = resultSet.getString("lender"),
+        loanReason = resultSet.getString("reason"),
+        createdDate = resultSet.getDate("created_date")
+      )
+    }
+    if (connection != null) {
+      connection.close()
+    }
+
+    loanRecords
+  }
 }
 
 //class MockLoanRecordRepository extends LoanRecordRepository {
@@ -156,26 +157,3 @@ class LoanRepositoryImpl @Inject()(client: JDBCClient) extends LoanRecordReposit
 //    else false}
 //}
 
-
-object JDBCConnectObject {
-  val jdbcConn: Option[Connection] = setConnect()
-
-  private def setConnect(): Option[Connection] = {
-    var connection: Connection = null
-    val driver = "com.mysql.cj.jdbc.Driver"
-    val url = "jdbc:mysql://localhost:3306/loanrecord"
-    val user = "root"
-    val password = "di@2020!"
-    try {
-      // make the connection
-      Class.forName(driver)
-      connection = DriverManager.getConnection(url, user, password)
-      Some(connection)
-    } catch {
-      case e => {
-        println(e)
-        None
-      }
-    }
-  }
-}

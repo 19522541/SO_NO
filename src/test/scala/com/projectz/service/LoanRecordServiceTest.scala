@@ -4,6 +4,7 @@ import com.google.inject.Guice
 import com.projectz.domain.LoanRecord
 import com.projectz.domain.request.AddLoanRecordRequest
 import com.projectz.module.TestModule
+import com.projectz.util.Implicits.FutureEnhance
 import com.twitter.inject.{Injector, IntegrationTest}
 
 import java.util.Date
@@ -25,7 +26,7 @@ class LoanRecordServiceTest extends IntegrationTest{
     assert(borrowers.size==1)
   }
   test( "Get borrowers of lender empty keyword"){
-    val borrowers= service.getBorrowersOfLender("Nguyễn Văn B","")
+    val borrowers= service.getBorrowersOfLender("9877e2f4-4be1-4713-b151-505aa0a712bb","")
     assert(borrowers.size==1)
   }
   test( "Get borrowers of anonymous lender"){
@@ -36,8 +37,13 @@ class LoanRecordServiceTest extends IntegrationTest{
     val loadRecord = service.getLoanDetailOfBorrower(lender = "LUONG HUU VUong",borrower = "Lương Hữu Vương")
     assert(loadRecord.size==1 )
   }
-  test("is DB connected??"){
-   assert(service.isConnect())
+  test("Test Thrift "){
+    val userInfo= service.getUserInfoById("0470142e-274c-11ed-aa17-0242ac120002")
+      println(s"UserInfo:${userInfo}")
+  }
+  test("Test Thrift when set id empty ") {
+    val userInfo = service.getUserInfoById("")
+    println(s"UserInfo:${userInfo}")
   }
 
 }
