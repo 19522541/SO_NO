@@ -5,7 +5,4 @@ import com.twitter.finatra.validation.constraints.NotEmpty
 
 
 case class GetLoanRecordRequest(@RouteParam  lender: String,
-                                @RouteParam keyword: String = "")
-// camelCase
-// sake_case
-// PascalCase
+                                @RouteParam keyword: String ="")

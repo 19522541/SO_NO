@@ -33,7 +33,7 @@ trait LoanService {
    */
   @throws[NotFoundException]("Khi chủ nợ không tồn tại")
   @throws[InternalError]("gap bat cu exception nao")
-  def getBorrowersOfLender(lender: String, keyword: String): Seq[GetBorrowerResponse]
+  def getBorrowers(lender: String, keyword: String): Seq[GetBorrowerResponse]
 
   /**
    * Chủ nợ lấy danh sách ghi nợ mà con nợ đã nợ mình
@@ -44,7 +44,7 @@ trait LoanService {
    */
   @throws[NotFoundException]("Khi chủ nợ không tồn tại")
   @throws[InternalError]("gap bat cu exception nao")
-  def getLoanDetailOfBorrower(lender: String, borrower: String): Seq[LoanResponse]
+  def getLoanDetails(lender: String, borrower: String): Seq[LoanResponse]
 
   def getUserInfoById(id:String):UserInfo
 
@@ -59,14 +59,16 @@ trait LoanService {
     val newRecord: LoanRecord = loanRecordRepository.save(loanRecord)
      newRecord
   }
-  override def getBorrowersOfLender(lender: String, keyword: String): Seq[GetBorrowerResponse] = {
+  override def getBorrowers(lender: String, keyword: String): Seq[GetBorrowerResponse] = {
+    getUserInfoById(lender)
     val userIds:Seq[String]= getUserIdByKeyword(keyword)
-    val borrowers: Seq[Loan] = loanRecordRepository.getBorrowersOfLender(lender, userIds)
+    val borrowers: Seq[Loan] = loanRecordRepository.getBorrowerLoans(lender, userIds)
       convertArrayOfLoanToArrayOfGetBorrowerResponse(borrowers)
   }
 
-  override def getLoanDetailOfBorrower(lender: String, borrower: String): Seq[LoanResponse] = {
-    val loadDetailOfBorrower: Seq[LoanRecord] = loanRecordRepository.getRecordOfBorrower(lender, borrower)
+  override def getLoanDetails(lender: String, borrower: String): Seq[LoanResponse] = {
+    getUserInfoById(lender)
+    val loadDetailOfBorrower: Seq[LoanRecord] = loanRecordRepository.getLoanDetails(lender, borrower)
     convertArrayOfLoanRecordToArrayOfLoanResponse(loadDetailOfBorrower)
   }
 

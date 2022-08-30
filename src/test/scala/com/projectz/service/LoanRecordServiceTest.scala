@@ -22,19 +22,19 @@ class LoanRecordServiceTest extends IntegrationTest{
     assert(createdResult.lender==addRequest.lender)
   }
   test( "Get borrowers of lender"){
-    val borrowers= service.getBorrowersOfLender("LUONG HUU VUong","ng Hữu Vư")
+    val borrowers= service.getBorrowers("LUONG HUU VUong","ng Hữu Vư")
     assert(borrowers.size==1)
   }
   test( "Get borrowers of lender empty keyword"){
-    val borrowers= service.getBorrowersOfLender("9877e2f4-4be1-4713-b151-505aa0a712bb","")
+    val borrowers= service.getBorrowers("9877e2f4-4be1-4713-b151-505aa0a712bb","")
     assert(borrowers.size==1)
   }
   test( "Get borrowers of anonymous lender"){
-    val borrowers= service.getBorrowersOfLender("","")
+    val borrowers= service.getBorrowers("","")
     assert(borrowers.size==0)
   }
   test( "Loan Record of Borrower" ){
-    val loadRecord = service.getLoanDetailOfBorrower(lender = "LUONG HUU VUong",borrower = "Lương Hữu Vương")
+    val loadRecord = service.getLoanDetails(lender = "LUONG HUU VUong",borrower = "Lương Hữu Vương")
     assert(loadRecord.size==1 )
   }
   test("Test Thrift "){

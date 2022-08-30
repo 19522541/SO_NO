@@ -25,7 +25,7 @@ trait LoanRecordRepository {
    * @param keyword từ khóa  liên quan đến tên của con nợ chủ nợ muốn tìm
    * @return danh sách các ghi nợ của các con nợ
    */
-  def getBorrowersOfLender(lender: String, userIds: Seq[String]): Seq[Loan]
+  def getBorrowerLoans(lender: String, userIds: Seq[String]): Seq[Loan]
 
   /**
    * Xuất danh sách từ nơi lưu chử của con nợ
@@ -34,7 +34,7 @@ trait LoanRecordRepository {
    * @param borrower tên của con nợ
    * @return Danh sách ghi nợ của con
    */
-  def getRecordOfBorrower(lender: String, borrower: String): Seq[LoanRecord]
+  def getLoanDetails(lender: String, borrower: String): Seq[LoanRecord]
 
 }
 
@@ -59,7 +59,7 @@ class LoanRepositoryImpl @Inject()(client: JDBCClient) extends LoanRecordReposit
     )
   }
 
-  override def getBorrowersOfLender(lender: String, userIds: Seq[String]): Seq[Loan] = {
+  override def getBorrowerLoans(lender: String, userIds: Seq[String]): Seq[Loan] = {
     var borrower = Seq[Loan]()
     val connection = client.getConnection()
     userIds.foreach(id => {
@@ -77,7 +77,7 @@ class LoanRepositoryImpl @Inject()(client: JDBCClient) extends LoanRecordReposit
     borrower
   }
 
-  override def getRecordOfBorrower(lender: String, borrower: String): Seq[LoanRecord] = {
+  override def getLoanDetails(lender: String, borrower: String): Seq[LoanRecord] = {
     val connection = client.getConnection()
     val query = s"select * from loan_record WHERE lender=? and borrower=?"
     val preparedStatement = connection.prepareStatement(query)

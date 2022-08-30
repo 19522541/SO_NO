@@ -25,7 +25,7 @@ object TestModule extends TwitterModule {
   }
   @Provides
   def providesUserThrift(): TUser.MethodPerEndpoint = {
-    val methodPerEndpoint: TUser.MethodPerEndpoint = Thrift.client.build[TUser.MethodPerEndpoint]("localhost:8084")
+    val methodPerEndpoint: TUser.MethodPerEndpoint = Thrift.client.build[TUser.MethodPerEndpoint]("localhost:8888")
     methodPerEndpoint
   }
 }

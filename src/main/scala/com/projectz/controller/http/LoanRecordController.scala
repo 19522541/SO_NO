@@ -12,18 +12,14 @@ import javax.inject.Inject
 class LoanRecordController @Inject()(loanService: LoanService,userService: UserService) extends Controller {
 
   get("/loan/detail") { request: GetBorrowerRequest => {
-    val loanRecordsOfBorrower= loanService.getLoanDetailOfBorrower(request.lender,request.borrower)
+    val loanRecordsOfBorrower= loanService.getLoanDetails(request.lender,request.borrower)
     loanRecordsOfBorrower
   }
   }
 
   get("/loan") { request: GetLoanRecordRequest => {
-    try {
-      val borrowers= loanService.getBorrowersOfLender(request.lender,request.keyword)
+      val borrowers= loanService.getBorrowers(request.lender,request.keyword)
       borrowers
-    } catch {
-      case ex: Throwable => logger.error(s"LoanController::getLoan ${ex.getMessage}")
-    }
   }
   }
 

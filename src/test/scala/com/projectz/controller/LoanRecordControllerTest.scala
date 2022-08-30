@@ -2,7 +2,7 @@ package com.projectz.controller
 
 import com.projectz.TestServer
 import com.projectz.domain.LoanRecord
-import com.projectz.domain.response.LoanResponse
+import com.projectz.domain.response.{GetBorrowerResponse, LoanResponse}
 import com.projectz.util.JsonUtils
 import com.twitter.finagle.http.Response
 import com.twitter.finagle.http.Status.Ok
@@ -29,14 +29,14 @@ class LoanRecordControllerTest extends FeatureTest{
   test("[HTTP] get  all borrower of lender by set empty keyword field") {
     //lender (Ng Van Z)   =>>(NGuyen Thi X)&(Luong Huu )
     val response = server.httpGet(path = "/loan?lender=9877e2f4-4be1-4713-b151-505aa0a712bb&keyword=")
-    val lendResponses: Seq[LoanResponse] = JsonUtils.fromJson[Seq[LoanResponse]](response.contentString)
-    println(lendResponses)
+    val lendResponses: Seq[GetBorrowerResponse] = JsonUtils.fromJson[Seq[GetBorrowerResponse]](response.contentString)
+   assert(lendResponses.length==2)
   }
   test("[HTTP] get borrower of lender when set lender is empty") {
     //lender (Ng Van Z)   =>>(NGuyen Thi X)&(Luong Huu )
     val response = server.httpGet(path = "/loan?lender=&keyword=")
     val lendResponses: Seq[LoanResponse] = JsonUtils.fromJson[Seq[LoanResponse]](response.contentString)
-    println(lendResponses)
+      assert(lendResponses.isEmpty)
   }
   test("[HTTP] Post add new  load record of lender"){
     val lenderId="3b5cc43e-2758-11ed-aa17-0242ac120002"
