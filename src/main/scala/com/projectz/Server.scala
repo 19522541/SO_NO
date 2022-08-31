@@ -10,8 +10,7 @@ import com.twitter.finatra.mapping.{CaseClassExceptionMapping, CommonExceptionMa
 import com.twitter.finatra.thrift.ThriftServer
 import com.twitter.finatra.thrift.routing.ThriftRouter
 import com.projectz.controller.http
-import com.projectz.controller.http.{HealthController, LoanRecordController, ProductController}
-import com.projectz.controller.thrift.CacheController
+import com.projectz.controller.http.{HealthController, LoanRecordController}
 import com.projectz.domain.LoanRecord
 import com.projectz.module.{MainModule, TestModule}
 import com.projectz.util.ZConfig
@@ -28,7 +27,6 @@ class TestServer extends Server {
 
   private def overrideModule(modules: Module*): Module = {
     if (modules.size == 1) return modules.head
-
     var module = modules.head
     modules.tail.foreach(m => {
       module = Modules.`override`(module).`with`(m)
@@ -37,13 +35,13 @@ class TestServer extends Server {
   }
 }
 
-class Server extends HttpServer with ThriftServer {
+class Server extends HttpServer  {
 
   override protected def defaultHttpPort: String =
     ZConfig.getString("server.http.port", ":8080")
 
-  override protected def defaultThriftPort: String =
-    ZConfig.getString("server.thrift.port", ":8082")
+//  override protected def defaultThriftPort: String =
+//    ZConfig.getString("server.thrift.port", ":8082")
 
   override protected def disableAdminHttpServer: Boolean =
     ZConfig.getBoolean("server.admin.disable", true)
@@ -55,16 +53,14 @@ class Server extends HttpServer with ThriftServer {
     router
       .filter[CORSFilter](beforeRouting = true)
       .filter[CommonFilters]
-      .add[http.CacheController]
       .add[HealthController]
-      .add[ProductController]
       .add[LoanRecordController]
       .exceptionMapper[CaseClassExceptionMapping]
       .exceptionMapper[JsonParseExceptionMapping]
       .exceptionMapper[CommonExceptionMapping]
   }
 
-  override protected def configureThrift(router: ThriftRouter): Unit = {
-    router.add[CacheController]
-  }
+//  override protected def configureThrift(router: ThriftRouter): Unit = {
+//
+//  }
 }
